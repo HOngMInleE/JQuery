@@ -28,6 +28,8 @@
             </tr>
         </table>
 
+        <br>
+
         <table border="1" width="700" height="300">   <!-- 셀병합 예제. ㅈㄴ 빠르다 사람들 ㄷㄷ. 나도 완성함ㅎㅎ 화이또!-->
             <tr>
                 <td></td><td colspan="2"></td><td></td>
@@ -42,5 +44,24 @@
                 <td></td>
             </tr>
         </table>
+
+        <br>                <!-- col : 열, row : 행. 한칸으로 병합이 된것이 맞나?-->
+
+        <table border="1" width="500">
+            <tr>                                       <!--table에 image를 넣은것-->
+                <td colspan="2" rowspan="2" ><img src="images/Danielcaesar.jpg" alt=" " width="350" height="350"></td>
+            </tr>
+            <tr>
+                
+            </tr>
+        </table>
+
+        <br>                <!-- alt : 시각적인것을 음성서비스를 지원.(접근성을 위해 ex.청각장애)-->
+                            <!-- img src = " 이미지경로"  alt="" -->
+                            <!-- 기준 : 이미지를 사용하는 주소(html파일).  상대경로  , 절대경로 -->
+        <img src="images/Danielcaesar.jpg" alt=" ">     <!-- 상대경로 : html 파일과 비교, 상대적인 위치 값-->
+        <img src="D:\HongMin\Front-End\images" alt="">  <!-- 절대경로 : 그 파일이 가지고 있는 주소 값 -->
+        <img src="images/Danielcaesar.jpg" alt=" " width="350" height="350">
+    
     </body>
 </html>
