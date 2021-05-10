@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>text-transform </title>
+        <meta charset="UTF-8">
+        <style>
+            div { 
+                width: 150px; 
+                height: 150px;
+                border: 1px solid black;
+                /* white-space: pre; 틀을 벗어나 쓴 그대로 표현 */
+                white-space: pre-wrap; /* 공백유지, 자동으로 줄바꿈 */
+            }
+
+            p {letter-spacing: 0.2em;} /* 글자 간의 간격(자간)이 생김 */
+        
+            /* class 선택자 */ /* 여러번 중첩 가능 */
+            .c1 {color: salmon;}
+            .c2 {color: cyan;}
+            .c3 {color: blanchedalmond;}
+            .c4 {font-size: 30px;}
+
+            /* id 선택자 */     /*  id 선택자는 여러개 중첩 불가능. 단 한 번만 사용가능 */
+            #p1 {font-size: 10px;}
+            #p2 {font-size: 10px;}
+            #p3 {font-size: 10px;}
+            #p4 {color: red;}
+
+            h1,h2 {                     /* 그룹 선택자 : 선택자들을 한 그룹으로 묶을 수 있음 */
+                text-align: center;     /* 가운데 정렬 */
+            }
+
+        </style>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <h1>안녕하세요</h1>
+        <h2>안녕하세요</h2>
+        <div>안녕하세요  안녕하세요     안녕하세요       안녕하세요     안녕하세요       안녕하세요</div>
+        <p class="c1 c4">안녕하세요</p>
+        <p class="c2 c4">안녕하세요</p>
+        <p class="c3 c4">안녕하세요</p><br>
+
+        <p id="p1 p4">안녕하세요</p> <!-- 색 적용 안됨 -->
+        <p id="p2 p4">안녕하세요</p>
+        <p id="p3 p4">안녕하세요</p>
+    </body>
+</html>
