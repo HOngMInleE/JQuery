@@ -10,13 +10,17 @@
 
         div {
             background-color: teal;
-            width: 200px;
+            width: 200px;       /* 크기를 계산하는 방식 = width + 2*(padding + border + margin) */
             height: 200px;
+            padding: 10px;
+            border: 10px solid #c00;
+            margin: 10px;
+
             }
 
         span {
-            background-color: tomato; 
-            width: 200px;       /* 인라인레벨 태그는 크기 지정하는 것 사용 못함. */
+            background-color: tomato;
+            width: 200px;       /* 인라인레벨 태그는 크기 지정하는 것 사용 못함-> 이미 지정되어 있기 때문(내용값) */
             height: 200px;
             }
 
