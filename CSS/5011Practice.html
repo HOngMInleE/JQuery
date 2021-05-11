@@ -5,21 +5,34 @@
         <title>5011Practice </title>
         <style>
             div {
-                width: 100px;
-                height: 100px;
-                margin: 30px;
+                width: 200px;
+                height: 200px;
+                margin: 30px;       /* 다른 margin과 겹칠 수가 있다. => 제일 바깥 쪽의 값이라서. */
+                padding: 20px;
                 display: inline-block;
-            }
+                
+             /* border-top: 두께 색상 선종류; 
+                border: 두께 선종류 색상; (4방향모두) */
+                border: 5px solid #ff0;
+                border-radius: 100px;
+                }
+
             .first {
                 background-color: red;
+                text-align: center;
+                line-height: 200px;     /* 각각의 줄마다 세로가운데 정렬되므로 영역안에 1줄의 텍스트만 있을 경우에 쓴다 */
                 }
             
             .second {
                 background-color: royalblue;
+                text-align: center;
+                line-height: 200px;
                 }
 
             .third {
                 background-color: salmon;
+                text-align: center;
+                line-height: 200px;
                 }
         </style>
         <script>
@@ -27,7 +40,7 @@
         </script>
     </head>
     <body>
-        <div class="first">div태그 3개를 만들고 각각 배경색을 다르게 지정한다
+        <div class="first">태그 3개를 만들고 각각 배경색을 다르게 지정한다
         </div>
         <div class="second">크기 넓이는 100px 높이는 100px 머잔은 30px              
         </div>
