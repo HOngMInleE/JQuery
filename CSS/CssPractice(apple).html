@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">    
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS practice apple </title>
+        <style>
+            body {
+                font-family: "맑은 고딕",돋움;
+            }
+
+            .container {
+                position: relative;
+                width: 600px;
+                height: 400px;
+                padding:  20px;
+                border: 1px solid #ccc;
+                background: url('images/apple.jpg') no-repeat;  /* size를 적용해 봤지만 결과 값이 달랐음.  이유는 ?? */
+                /* 여러 개(속성)을 사용 할 때는 접두사 제거, ex) background-image에서 image제거. */
+                background-size: cover;  
+            }
+
+            .content {
+                position: absolute;
+                top: 300px;
+                width: 90%;
+                padding: 10px;
+                background-color: rgba(255, 255, 255, 0.5);
+
+
+            }
+            
+            h1 {
+                font-size: 30px;
+                text-align: center;
+                
+            }
+
+
+            /* body {
+                background-image: url('images/apple.jpg');
+                background-repeat: no-repeat;
+            }
+
+            p {
+                background: white;
+                font-size: large;
+                font-weight: bold;
+                text-align: center; } */
+
+
+        </style>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+            <div class="container">
+                <div class="content">
+                    <h1>하루 한 알의 사과는 의사를 멀리 한다</h1>
+                </div>
+
+            </div>
+    </body>
+</html>
