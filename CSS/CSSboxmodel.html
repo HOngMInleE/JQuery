@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">    
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Boxmodel </title>
+        <style>     /* 박스모델 
+                    블록태그
+                    인타인태그
+                    인라인 블록 태그 */
+
+        div {
+            background-color: teal;
+            width: 200px;
+            height: 200px;
+            }
+
+        span {
+            background-color: tomato; 
+            width: 200px;       /* 인라인레벨 태그는 크기 지정하는 것 사용 못함. */
+            height: 200px;
+            }
+
+        </style>
+        <script>
+            
+        </script>
+    </head>     <!--태그를 짤 때 생각해야 하는 것 : 1.얼마마한 크기로, 2.어디에다가.-->
+    <body>
+        <div>12345</div>     <!--블록레벨 태그 : 내용에 상관없이 (한 줄이란)전체 영역을 차지,생성. 
+                            ex ) p, h1, ul, form, hr, table-->
+        <span>228246</span>   <!--인라인레벨 태그 : 내용이 들어간 만큼만의 영역을 차지,생성.
+                                ex ) img, input, label, button-->
+        <span>4646464646</span>   <!--인라인레벨 태그-->
+
+    </body>
+</html>
