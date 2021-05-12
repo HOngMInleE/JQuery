@@ -23,3 +23,61 @@ nav ul li {
     display: inline;
     margin: 15pxs;
 }
+
+nav ul li a {       /* nav ul li 와 같은 선택자 아닌지..? 그런데 위에 입력해도 적용이 안됨. */
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    font-size: 2em;
+    line-height: 20px;
+    text-align: center;
+}
+
+article {
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid #333;
+    padding: 5px;
+    overflow: hidden;       /* 자식에 float. */
+
+}
+
+article section {
+    width: 30%;
+    height: 650px;
+    border: 1px dotted black;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+
+section h3 {
+    background: url('../images/0512.png') no-repeat;
+    background-position: left center;
+    /*background-position: 가로축 세로축 ;  */
+    padding: 30px ;
+}
+
+aside {
+    width: 80%;
+    background: greenyellow;
+    margin: 0 auto;
+    padding: 10px;
+
+    height: auto;       /* 선생님이 적어주신 것 / height기본값이 auto라 작성 안해도 됨. */
+
+}
+
+footer {
+    background: rgb(39, 21, 21);
+    margin: 0 auto;
+
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
