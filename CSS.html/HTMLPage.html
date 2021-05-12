@@ -1,56 +1,104 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>Chapter_5</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">        <!-- link 태그는 이곳에 넣어야함 다른 곳에 넣으면 오류가 생김 / 이유는 ??? -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- link 태그는 이곳에 넣어야함 다른 곳에 넣으면 오류가 생김 / 이유는 ??? -->
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
     <style>
-
         /* 초기화 코드 */
 
         * {             /* ' * ' = 모든 것을 선택한다는 의미  */
-        margin: 0;
-        padding: 0;
+            margin: 0;
+            padding: 0;
         }
 
-        body{font-family: 'Times New Roman', Times, serif;}
-        li {list-style-type: none;}
-        a {text-decoration: none;}
-        img {border: 0;}
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
 
         /*  header(헤더)  */
-
         #main_header {
-            font-family: 'Itim', cursive;
             width: 960px;
             margin: 0 auto;
             height: 160px;
-            position: relative;     /* 부모가 될 것이라 relative 작성해줌. 자식에는 absolute. */
+            position: relative;      /* 부모가 될 것이라 relative 작성해줌. 자식에는 absolute. */
         }
-            /* 자식 중 첫째 를 의미 /  > = 자식 / 없으면 후손(전체의 의미) */
-        #main_header > #title {
-            position:absolute;
+
+        /* 자식 중 첫째 를 의미.              > = 자식 / 없으면 후손(전체의 의미) */
+        #main_header>#title {
+            position: absolute;
             left: 20px;
             top: 30px;
         }
 
-        #main_header > #main_gnb {
+        #main_header>#main_gnb {
             position: absolute;
             right: 0;
             top: 0;
         }
 
-        #main_header > #main_lnb {
+        #main_header>#main_lnb {
             position: absolute;
             right: 0;
             bottom: 0;
         }
 
-        /* (제목) */
+        /* title(제목) */
 
+        #title {
+            font-family: 'Itim', cursive;
+        }
+
+        /* gnb 메뉴 */
+
+        #main_gnb {
+            overflow: hidden;
+        }
+
+        #main_gnb > ul > li {
+            float: left;
+        }
+
+        #main_gnb > ul > li > a {     /* <a> 하나의 객체(?)로써 content와 하나이기 때문, li는 단지 배열해주는 태그이기 때문에 a를 꾸며주는듯함. /  */
+            border: 1px solid black;        
+            padding: 2px 10px;      /* 위아래로는 border(선)이 보이지 않음 / 이유는 ? */
+            display: block;     /* padding을 적용하려면 block으로 바꿔줘야함. inline은 위아래를 쓰지 않기 때문? 그런 개념이 없어서? /  */
+        }
+
+        /* lnb 메뉴 */
+        #main_lnb {
+            overflow: hidden;
+        }
+
+        #main_lnb > ul > li {
+            float: left;
+            border: 1px solid black;
+            border-bottom-left-radius: 10px;
+            
+
+        }
+
+        #main_lnb > ul > li > a {
+            padding: 2px 10px;
+            display: block;
+        }
     </style>
 </head>
+
 <body>
     <header id="main_header">
         <hgroup id="title">     <!-- hgroup 란 ? / h를 묶는 group같음. -->
@@ -58,7 +106,7 @@
             <h2>HTML5 + CSS3 Basic</h2>
         </hgroup>
         <nav id="main_gnb">     <!-- global navigation bar-->
-            <ul>
+            <ul>                <!-- ul은 단위 값이 안먹어짐. 묶는 태그로서의 존재인듯함. / -->
                 <li><a href="#">Web</a></li>
                 <li><a href="#">Mobile</a></li>
                 <li><a href="#">Game</a></li>
@@ -80,15 +128,39 @@
         <section id="main_section">
             <article class="main_article">
                 <h1>Main Article</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor. Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra
+                    nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam
+                    blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis.
+                    Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec
+                    mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus.
+                    Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit
+                    nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque.
+                    Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor.
+                    Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
             </article>
             <article class="main_article">
                 <h1>Main Article</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor. Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra
+                    nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam
+                    blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis.
+                    Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec
+                    mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus.
+                    Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit
+                    nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque.
+                    Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor.
+                    Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
             </article>
             <article class="main_article">
                 <h1>Main Article</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis. Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus. Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque. Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor. Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in magna libero. Sed nec pharetra
+                    nunc. Proin eget magna id ipsum eleifend cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam
+                    blandit, sapien ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa pulvinar turpis.
+                    Cras tincidunt dictum urna ut ultricies. Nullam diam nibh, pellentesque non laoreet ut, bibendum nec
+                    mauris. Maecenas pulvinar porttitor laoreet. Vivamus bibendum purus nisl, eget aliquam lectus.
+                    Maecenas justo libero, euismod sit amet suscipit eu, vulputate eget neque. Aliquam quam est, blandit
+                    nec iaculis non, suscipit vel nunc. Proin et odio aliquam erat pharetra accumsan et quis neque.
+                    Vivamus interdum accumsan leo eu adipiscing. Integer accumsan elit non turpis faucibus porttitor.
+                    Aliquam scelerisque nisi et turpis pretium at ultricies turpis pharetra.</p>
             </article>
         </section>
         <aside id="main_aside">
@@ -101,73 +173,81 @@
             <div class="tab_item">
                 <ul>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>HTML5 Canvas</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Canvas</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>HTML5 Audio</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Audio</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>HTML5 Video</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Video</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>HTML5 Semantic Web</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Semantic Web</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                 </ul>
             </div>
             <div class="tab_item">
                 <ul>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>CSS3 Transition</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>CSS3 Transition</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>CSS3 Animation</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>CSS3 Animation</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>CSS3 Border</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>CSS3 Border</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                     <li class="item"><a href="#">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/45x45" />
-                        </div>
-                        <div class="description">
-                            <strong>CSS3 Box</strong><p>2012-03-15</p>
-                        </div>
-                    </a></li>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" />
+                            </div>
+                            <div class="description">
+                                <strong>CSS3 Box</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
                 </ul>
             </div>
         </aside>
@@ -177,4 +257,5 @@
         <address>Website Layout Basic</address>
     </footer>
 </body>
+
 </html>
