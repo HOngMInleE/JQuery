@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>table-layout </title>
+    <style>     
+        /* 그룹 선택자 = 선택자 , 선택자 */
+        table,td {
+            border: 1px solid black;
+        }
+
+        .table1 {
+            border-collapse: collapse;
+            width: 300px;
+            table-layout: fixed;        /* 셀의 크기를 내용에 상관없이 고정시키거나 균등하게 처리하기 위해 사용 */
+            /* 한글은 줄바꿈이 되지만 영문자는 밖으로 튀어나가짐. */
+            word-break: break-all;      /* 그 문제 해결하는 속성 (줄바꿈해줌) */
+            height: auto;       /*  기본이 auto 라서 안써줘도 됨. */
+        }
+
+        .table1 td {
+            height: 50px;
+            width: 150px;
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;     /* 수평 정렬*/
+            vertical-align: bottom;     /* 수직 정렬 : table에서만 가능 */
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <h1>Table Layout</h1>
+        <table class="table1">
+            <tr>
+                <td>
+                    한글한글한글한글한글한글한글한글한글한글한글한글한글한글한글한글한글한글
+                </td>
+                <td>
+                    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+                </td>
+            </tr>
+        </table>
+</body>
+
+</html>
