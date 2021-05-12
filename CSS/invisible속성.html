@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>invisible속성 </title>
+    <style>     /* 화면에 보였다가 안보였다가 하는 속성 */
+        img {
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+        
+        .invisible {        /* visibility: visible hidden; */
+            /* visibility: hidden;     화면에서 사라지더라도 콘텐츠 영역은 보존됨 */
+            display: none; /* 영역마저 사라짐 */
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="images/1.jpg">
+    <img src="images/2.jpg" class="invisible">
+    <img src="images/3.jpg">
+</body>
+
+</html>
