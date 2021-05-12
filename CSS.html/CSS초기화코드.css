@@ -1,0 +1,14 @@
+        /*  초기화 코드  */
+
+        * {             /* ' * ' = 모든 것을 선택한다는 의미  */
+            margin: 0;
+            padding: 0;
+            }
+    
+            body{ 
+                font-family: ;
+            }
+    
+            li {list-style-type: none;}
+            a {text-decoration: none;}
+            img {border: 0;}
