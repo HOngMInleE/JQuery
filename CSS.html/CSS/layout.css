@@ -29,12 +29,6 @@ nav ul li a {       /* nav ul li 와 같은 선택자 아닌지..? 그런데 위
     text-decoration: none;
 }
 
-p {
-    font-size: 2em;
-    line-height: 20px;
-    text-align: center;
-}
-
 article {
     width: 80%;
     margin: 0 auto;
@@ -74,10 +68,16 @@ footer {
     background: rgb(39, 21, 21);
     margin: 0 auto;
 
-    width: 80%;
+    width: 80%;     /* 넓이에서 퍼센트(%)를 쓰는 이유와 원리 찾아보기 /  */
     margin: 0 auto;
     padding: 10px;
     background-color: #333;
     color: white;
+    text-align: center;
+}
+
+p {
+    font-size: 1em;
+    line-height: 20px;
     text-align: center;
 }
