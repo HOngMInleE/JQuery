@@ -1,0 +1,233 @@
+                /* 초기화 코드 */
+
+        * {             /* ' * ' = 모든 것을 선택한다는 의미  */
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        li {
+            list-style-type: none;      /* list태그의 .(점)을 없애줌 */
+        }
+
+        a {
+            text-decoration: none;      /* a태그의 밑줄(자동으로 생기는 것)을 없애줌 */
+        }
+
+        img {
+            border: 0;      /* img가 가져오는 기본 border값을 없애줌 */
+        }
+
+        /*  header(헤더)  */
+        
+        #main_header {
+            width: 960px;
+            margin: 0 auto;
+            height: 160px;
+            position: relative;      /* 부모가 될 것이라 relative 작성해줌. 자식에는 absolute. */
+        }
+
+                    /* 자식 중 첫째 를 의미.   ' > '=자식  /  없으면 후손 (전체의 의미) */
+        #main_header>#title {
+            position: absolute;
+            left: 20px;
+            top: 30px;
+        }
+
+        #main_header>#main_gnb {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #main_header>#main_lnb {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        /* title(제목) */
+
+        #title {
+            font-family: 'Itim', cursive;
+        }
+
+        /* gnb 메뉴 */
+
+        #main_gnb {
+            overflow: hidden;
+        }
+
+        #main_gnb > ul > li {
+            float: left;
+        }
+
+        #main_gnb > ul > li > a {     /* <a> 하나의 객체(?)로써 content와 하나이기 때문, li는 단지 배열해주는 태그이기 때문에 a를 꾸며주는듯함. /  */
+            border: 1px solid black;        
+            padding: 2px 10px;      /* 위아래로는 border(선)이 보이지 않음 / 이유는 ? */
+            display: block;     /* padding을 적용하려면 block으로 바꿔줘야함. inline은 위아래를 쓰지 않기 때문? 그런 개념이 없어서? /  */
+        }
+
+        #main_gnb > ul > li > a:hover {     /* :hover (가상 선택자) = 마우스포인트가 어떤 대상을 가르키는 것 */
+            background-color:  black;
+            color: white;
+        }
+
+        #main_gnb >ul > li:first-child > a {        /* :first-child = 첫번째 자식 (첫째) */
+            border-radius: 10px 0 0 10px;       /* 속성 값 = (시계방향으로) 좌측상단, 우측상단, 우측하단, 좌측하단 */
+        }
+
+        #main_gnb >ul > li:last-child > a {        /* :last-child = 마지막 자식 (막내) */
+            border-radius: 0 10px 10px 0;
+        }
+
+
+        /* lnb 메뉴 */
+        #main_lnb {
+            overflow: hidden;
+        }
+
+        #main_lnb> ul> li {
+            float: left;
+        }
+
+        #main_lnb> ul> li> a {
+            border: 1px solid black;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        #main_lnb> ul> li> a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #main_lnb> ul> li:first-child> a {
+            border-radius: 10px 0 0 10px;
+        }
+
+        #main_lnb> ul> li:last-child> a {
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* content (콘텐츠) */
+        
+        #content {
+            width: 960px;       /* 통일성을 주기 위해 header와 동일한 넓이 값 사용. */
+            margin: 0 auto;
+            overflow: hidden;       /* 자식에 float사용할 수도 있다.(자식에 float사용하려면 부모에 필요한 속성이라서) */
+        }
+
+        #content > #main_section {     /* css를 작성할 떄는 구체적으로 선택자를 작성해야함.그래야 유지보수 관리가 편함! */
+        width: 750px;
+        float: left;
+        }
+
+        #main_section > article.main_article {       /* {선택자.클래스선택자} (복합선택자) = 선택자중 클래스선택자. */
+            border: 1px solid black;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        #content > #main_aside {
+            width: 200px;       /* #main_section과 너무 붙지 않도록 중간에 공간을 남겨두는 값을 설정함. */
+            float: right;
+            margin-top: 10px;
+        }
+
+        /* 가상 클래스 , 구조 선택자(' : ') ex) :first-child, :nth-of-type() */
+        input:nth-of-type(1) {
+            display: none;      /* 안보이는 것과 공간의 차지까지 제거하기위해 display와 invisible중 display사용함. */
+        }
+
+                            /* ' ~ ' = 아래쪽의 */
+        input:nth-of-type(1) ~ div:nth-of-type(1) {
+            display: none;
+        }
+
+        input:nth-of-type(1):checked ~ div:nth-of-type(1) {
+            display: block;     /* 화면에 보이게 하는 block. */
+        }
+
+        input:nth-of-type(2) {
+            display: none;
+        }
+
+        input:nth-of-type(2) ~ div:nth-of-type(2) {
+            display: none;
+        }
+
+        input:nth-of-type(2):checked ~ div:nth-of-type(2) {     /* checked속성 : 명시하지 않으면 속성값이 자동으로 false 값을 가지게 되며, 명시하면 자동으로 true 값을 가지게 됨.*/
+            display: block;     
+        }
+
+        section.buttons {
+            overflow: hidden;
+        }
+
+        section.buttons > label {
+            display: block;
+            float: left;
+            width: 100px ;        /* 부모 넓이가 200px이기 때문 100px이하로 작성해야함. */
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid black;
+            box-sizing: border-box;     /* border를 포함한 넓이로 잡아줌. */
+        }
+
+        input:nth-of-type(1):checked ~ section.buttons > label:nth-of-type(1) {
+            background: black;
+            color: white;
+        }
+
+        input:nth-of-type(2):checked ~ section.buttons > label:nth-of-type(2) {
+            background: black;
+            color: white;
+        }
+
+        .tab_item > ul > .item { 
+            overflow: hidden;
+            border: 1px solid black;
+            border-top: none;       /* 겹쳐진 border를 제거해줌. */
+            padding: 10px;
+        }
+
+        .thumbnail {
+            float: left;
+        }
+        
+        .description {
+            float: right;
+            margin-left: 10px;
+        }
+
+        .description > strong {
+            display: block;     /* strong=inline, 크기 조절을 위해 block처리. */
+            width: 120px;
+
+            /* ' 생략기법 '  ex ) ' text... ' /  3개의 속성이 다 같이 사용되어야 함. */
+
+            white-space: nowrap;        /* 글자가 border를 넘어 넘쳐흐르게 해줌. */
+            overflow: hidden;       /* 부모 안쪽으로 밀어넣어줌. (밖으로 튀어나가지않게) */
+            text-overflow: ellipsis;        /* 밖에 있는 부분들을 ...으로 나타내줌 */
+        }
+
+        /*              이거는 안됨.. 왜지?? / 
+        .tab_item > ul > .item > .description {
+            float: right;
+        } */
+
+        #main_footer {
+            width: 960px;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            box-sizing:border-box;
+            margin: 0 auto;
+
+            margin-bottom: 10px;
+        }
