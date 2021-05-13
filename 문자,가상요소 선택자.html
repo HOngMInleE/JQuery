@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문자,가상요소 선택자 </title>
+    <style>
+        /* 문자 선택자 */
+        p::first-letter { /* 첫글자를 조정하는 효과.  */
+            font-size: 3em;
+        }
+        p::selection {      /* p::first-letter 에는 적용안됨. 이유는?? //  */
+            background: black;
+            color: red;
+        }
+
+        /* 가상요소 선택자 */
+        p {counter-increment: rint;}        /* rint = 변수 */
+        p::before {content: counter(rint) ".";}     /* counter = 변수에 값을 넣어주는 속성 */
+        /* = rint의 변수값을 p 앞에(before) "."을 붙여 처리해줘라. */
+
+        p::after {content:"-" attr(data-page) "page" ;}
+                        /* 작성한 순서대로 작성됨. ex) -52page */
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <h1>Jorja Smith</h1>
+    <p data-page="52">Jorja SmithJorja SmithJorja SmithJorja Smith</P>
+    <p data-page="273">Jorja SmithJorja SmithJorja SmithJorja Smith</P>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>selector </title>
+    <style>
+        /* 속성 선택자 (' 태그[속성] ') : 해당태그가 가지고 있는 속성에 효과 선택자 */
+        input[type="text"] { background: rgba(180, 109, 17, 0.5);}
+        input[type="password"] { background: rgba(19, 21, 187,0.5); }
+
+        /* ' $ ' = 속성 선택자 중에서 일부의 선택자만 선택하는 값 */
+        img[src$=jpg] { border: 1px solid red;}
+
+        /* 동위 선택자  */
+        /* ' = ' = 바로 밑에 있는 태그를 뜻함  ex) h1바로뒤의h2./ 뒤에h2가 없다면 실행되지않음/ 규칙성이 있는 태그에 쓸듯함. // */
+        /* h3 + h2 { color: red;} */
+        /* ' ~ ' = 동위태그 '들' / 복수선택함. */
+        /* h1 ~ h2 { background: rgba(255, 136, 0, 0.5);} */
+
+        /* 구조 선택자 */
+        ul {overflow: hidden;}
+        li {
+            list-style: none;
+            float: left;
+            padding: 15px; 
+        }
+        li:nth-child(2n) {      /* 2n = 2의 배수. (n은 정수), 값이 있는만큼만 계산됨. */
+            background: rgba(238, 0, 0, 0.5);
+        }
+        li:nth-child(2n-1) {
+            background: rgba(72, 255, 0, 0.5);
+        }
+        li:first-child { border-radius: 10px 0 0 10px;}
+        li:last-child { border-radius: 0 10px 10px 0;}
+
+        h1:first-of-type { color: red;}             /* first-of-type = 첫번째만. */
+        h2:first-of-type { color: red;}
+        h3:first-of-type { color: red;}
+
+        /* body > *:first-of-type { color: rgba(238, 0, 0, 0.5);} */
+
+        /* 반응선택자 */
+        p:hover { color: rgb(65, 253, 8);}
+        p:active { color: tomato;}
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <!-- <div>   /* 구조 선택자 */
+        <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+        <li>Sixth</li>
+        <li>Seventh</li>
+        </ul>
+        <hr>
+        <h1>Header-1</h1>
+        <h2>Header-2</h2>
+        <h3>Header-3</h3>
+        <h3>Header-3</h3>
+        <h2>Header-2</h2>
+        <h1>Header-1</h1>
+        <hr>
+        <h1>Header-1</h1>
+        <h2>Header-2</h2>
+        <h3>Header-3</h3>
+        <h4>Header-4</h4>
+        <h5>Header-5</h5>
+        <h6>Header-6</h6>
+    </div>
+    <hr> -->
+    <div>   /* 반응 선택자 */
+        <p>User Action selector</p>
+    </div>
+</body>
+
+</html>
