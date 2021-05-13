@@ -6,9 +6,9 @@
             }
     
             body{ 
-                font-family: ;
+                font-family: ;  /* link태그를 head태그에 붙여놔야함 (font링크) */
             }
     
-            li {list-style-type: none;}
-            a {text-decoration: none;}
-            img {border: 0;}
+            li {list-style-type: none;}     /* list태그의 .(점)을 없애줌 */
+            a {text-decoration: none;}      /* a태그의 밑줄(자동으로 생기는 것)을 없애줌 */
+            img {border: 0;}        /* img가 가져오는 기본 border값을 없애줌 */
