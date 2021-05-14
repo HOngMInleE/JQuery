@@ -15,13 +15,14 @@
 		border-bottom:1px solid black;
 	}
 	.header-text{
-		font-size:40px;
+		font-size:2em;
 		color:white;
 		text-align:center;
 		line-height:120px;
 	}
 	.content {   /* 본문 */
 		float:left;
+		font-size: 1.5em;		/* 부모의 font-size기준. 지정이 안되어있다면 그 부모,의부모,의부모.. 값을 기준. */
 		width:62.5%;
 		height:400px;	
 		padding:1.5625%;
@@ -29,14 +30,16 @@
 	}
 	.right-side {  /* 사이드 바 */
 		float:right;
+		font-size: 1.5em;
 		width:31.25%;
 		height:400px;
 		padding:1.5625%;
 		background-color:#00ff90;
 	}
 	footer {  /* 푸터 */
-		width: 100%;
 		clear:both;
+		font-size: 1.5em;
+		width: 100%;
 		height:120px;
 		background-color:#c3590a;
 	}
