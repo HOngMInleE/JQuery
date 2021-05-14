@@ -46,7 +46,7 @@
         #main_header>#main_lnb {
             position: absolute;
             right: 0;
-            bottom: 0;
+            bottom: 10px;
         }
 
         /* title(제목) */
