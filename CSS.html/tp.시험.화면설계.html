@@ -47,7 +47,13 @@
 
         section {
             width: 580px;
-            float: left;        /* 뒤에 있는 것들이 자동으로 따라옴. */
+            float: left;        /* 뒤에 있는 것들이 자동으로 따라옴. */     
+                            
+                                            /* 부모인 div id="wrapper"에 height도, overflow도 없지만,
+                                                 float을 사용하는데 뭉개지지 않는 4가지 방법 중 하나인 
+                                                 '같은 부모아래 마지막 태그에 clear: both; 값을 넣는 방식.'
+                                                        ex) div 아래 자식태그들 = 즉, semantic태그들 중 
+                                                        마지막에 위치한 <footer>에 clear:both;가 적용되어 있음. // 그래서 float을 뭉개지지않고 사용가능함. */
 
             padding: 5px;
         }
