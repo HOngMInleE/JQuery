@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>First Script </title>
+    <!-- <script src="js/alert.js"></script>   //   js 외부 파일 연동하는 법  -->
+    <style>
+    </style>
+    <script>        
+    // ' 변수 '
+        // 변수를 활용하는 방식 1.
+        
+            //         // alert('안녕하세요');     // Script에서 주석은 ' // ' 을 사용
+            //         // 변수 = 값을 저장하는 공간, 값을 쓰기위한 표식. // 컴푸터의 메모리에 변수를 저장. 
+            // var x;  // '변수를 선언'  // x라는 저장공간에 메모리가 할당, 
+            // x= 10;  // x라는 공간에 10이라는 데이터가 들어감. // 데이터를 기록. 
+            //         // ' = '   // 변수에 값을 대입했다 (변수의 초기화) 
+            //         // 대입연산자. 대입의 의미 // 이퀄의 의미가 아님. == : 이퀄의 의미. 
+            // document.write(x + "<br>");      //브라우저화면에 띄우는함수     // script는 부라우저 화면에 결과를 출력하려면 출력자를 입력해야함.
+            //         // ' + ' =  
+            // console.log(x);     // 개발자도구에서만 확인가능.
+            // x = 20;     // 20 = 상수 , 상수의 값을 대입한 x = 변수.
+            // document.write(x + "<br>");
+
+        // 변수를 활용하는 방식 2.
+
+            // var x,y,z;
+            // x = 10;
+            // y = 20;
+            // z = 30;
+            // document.write( x + y + "<br>"); 
+
+        // 변수를 활용하는 방식 3. // 변수 출력 형태.
+
+            // var x = 10, y = 20, z = 30;
+            // document.write(x + "<br>");
+            // document.write(y + "<br>");
+            // document.write(z + "<br>");
+
+            // document.write(x + " " + y + " " + z + "<br>")       // ' + ' = 연결연산자.
+            // document.write("x = " + x +  " y= " + y + " z = " + z + "<br>")      // 공백도 하나의 문자. 띄어쓰면 그대로 표현됨.
+
+
+        // 문자 , 숫자 , 논리값 , 객체 
+
+            // var s;
+            // s = 10;
+            // s = "hello World"   // 문자형. ' ' or " " 사용해줌.
+            // s = true;       // 논리형. ' true ' or ' false ' 사용가능.
+
+            // var x;
+            // document.write(x);      // undefined = 확정되지 않은, 확실하지 않은. > 변수의 값이 제대로 들어있지 않다라는 뜻. 
+
+
+    // ' 연산자 '
+
+        // ' 산술 연산자 '
+            // + , - , * , / , % 
+
+            // var x,y;
+            // x = 10;
+            // y = 20;
+            // document.write(x + y + "<br>");     // 더하기     
+            // document.write(x - y + "<br>");     // 빼기
+            // document.write(x * y + "<br>");     // 곱하기
+            // document.write(x / y + "<br>");     // 몫 구하는 나누기
+            // document.write(x % y + "<br>");     // 나머지 구하는 나누기
+
+            // x = '학교종이'
+            // y = '땡떙땡'
+
+            // document.write(x + y + "<br>");   // ' + ' = 연결연산자로서 사용.
+
+        // ' 대입 연산자 '
+            // = , + =, - =, * =, /= ..........
+            
+            // var x= 10;
+            // x += 20;    // x = x + 20; 와 같은 의미.
+            // document.write(x);
+
+        // var table = "<table border='1'>";    // " " 안에는 ' ' 로 표현. 
+            // table += "<tr>";
+            // table += "<td>1</td><td>2</td><td>3</td>";
+            // table += "</tr>";
+            // table += "</table>"; 
+
+            // document.write(table);
+
+        // ' 증감 연산자 ' ( 전위, 후위)        여러 연산자에서 전,후에 따라 값이 달라짐.
+            // ++ , --     // 변수의 값을 1증가, 1감소 
+
+                // var x = 10;
+                //     document.write(x + "<br>");
+                //     x++;
+                //     document.write(x + "<br>");     // x 의 값이 11로 바뀌게됨.
+                //     ++x;
+                //     document.write(x + "<br>");
+                //     x--;
+                //     document.write(x + "<br>");
+                //     --x;
+                //     document.write(x + "<br>");
+
+                // var y;
+                //     y = x++ + 1;    // x + 1 후에 x++ 
+                //     document.write(y + "<br>"); // 11
+                //     document.write(x + "<br>"); // 11
+                // y = ++x + 1;
+                //     document.write(y + "<br>"); // 12
+                //     document.write(x); // 11
+
+        // ' 비교 연산자 '
+            // > , < , >= , <= , == , !=
+            
+                // var x,y;
+                // x = 10;
+                // y = 20;
+
+                // // x > y
+                // document.write( (x > y) + "<br>");      // true , false 논리값의 형태로 나옴.
+                // document.write( (x == y) + "<br>");     // x , y를 ()로 묶은 이유 : ' + ' 가 우선순위가 높기때문.
+                // document.write( (x != y) + "<br>");     // ' != ' 는 무슨 기호?
+
+        // ' 논리 연산자 '      두개 이상의 조건이 붙을 때 사용.
+            // && (and) , || (or) , ! (not)
+
+                // && (and)
+                    // true && true    // true      // 둘 다 모두 만족. ( 그리고 )
+                    // true && false   // false
+                    // false && true   // false
+                    // false && false  // false
+
+                // || (or)
+                    // true || true    // true      //  둘 중에 하나만 만족. (또는 )
+                    // true || false   // true
+                    // false || true   // true
+                    // false || false  // false
+
+                // ! (not)      // 부정함으로서 조건을 만족 ex) 남자가 아니라면~ 아무나 ...
+
+                    // !true   // false
+                    // !false  // true
+
+                // var x = 10;
+                // var y = 20;
+                // var z = 30;
+
+                // document.write(x == 10 && y == 20 && z ==30);
+                // document.write("<br>");
+
+                // document.write(!(x == 10 && y == 20 && z ==30));    // 전체를 부정.
+                // document.write("<br>");
+
+                // document.write(x != 10 && y == 20);
+                // document.write("<br>");
+                // document.write(x == 10 || y != 20);
+                // document.write("<br>")
+
+
+            // 범위 설정 
+
+                // 1 <= x <= 10     
+                // var x = 5;
+                // document.write(x >= 1 && x <= 10);    // 1 <= x <= 10 같은 의미.   //true
+                // document.write("<br>");     
+                // var y = 100;
+                // document.write(y < 1 || y > 10);     //true
+                // document.write("<br>");
+                
+            // ' 삼항 연산자 '
+                // 조건식(true/false) ? 결과값1 : 결과값2  
+                // true = 결과값1   false = 결과값2
+
+                // var x = 10;
+                // var y = 20;
+                
+                // var result = x > y ? x : y  
+                // document.write( result);
+
+            // ' 예제 '
+
+                //국어,영어,수학
+                //세과목 모두 점수가 70 이상이면 합격 아니면 불합격
+
+                // var kor, eng, math;
+                // kor = 75;
+                // eng = 80;
+                // math = 93;
+    
+                // var all = kor >= 70 && eng >= 70 && math >= 70;  
+                // var result = all ? '합격' : '불합격';            // 합격,불합격에 ' ' 를 붙이지 않으면 결과 표시가 안나옴. 이유는 ? // 문자열은 ''""로 표현.
+                // document.write(result);
+                // document.write("<br>")
+
+                // //과목별 점수 70이상 합격 아니면 불합격
+                // document.write(kor >= 70 ? '합격' : '불합격');
+                // document.write("<br>")
+                // document.write(eng >= 70 ? '합격' : '불합격');
+                // document.write("<br>")
+                // document.write(math >= 70 ? '합격' : '불합격');
+                // document.write("<br>")
+            
+    // " 제어문 (조건문) "
+
+        // if . switch
+        
+            // if       // if (true / false(조건식))    블록단위로 실행, 조건식이 반드시 존재해야함.
+
+                // var age = 2;
+
+                // if(age >= 20){
+                //     document.write("회원가입 가능");
+                // }else{
+                //     document.write("회원가입 불가");
+                // }
+
+                // document.write("<br>" + "The End");      // if문이 제어하지 못함. // 조건문안의 블록안에 있어야 조건문으로 실행가능.
+            
+            // 다중 if 문 
+                
+                // var month = 5;
+                
+                // if(momth >= 3 && month <= 5 ){
+                //     document.write("햇살 가득한 봄");        // 종결되지 않은 문자열 상수입니다 해결하기,.// 
+                // }else if(month >= 6 && month <=8){
+                //     document.write("뜨거운 여름");
+                // }else if(month >= 9 && month <=11){
+                //     document.write("독서의 가을");
+                // }else if(month == 12 || month == 1 || month == 2 ){
+                //     document.write("시원한 겨울");
+                // }else{
+                //     document.write("잘못된 값 입니다.");
+                // }
+
+            // 중헙 if 문
+                
+                // if(){
+                //     if(){
+
+                //     }
+                // }else{
+                //     if({
+
+                //     })
+                // }
+
+                var x, y;
+                x = 2, y = 3 z = 6;
+
+    </script>
+</head>
+
+<body>
+    <!-- <button value="클릭" >클릭</button>       -->
+            <!-- html에서 ""는 // Script에서는 ''와 ""를 허용. // value = 이름지어주는 역할 -->
+
+</body>
+
+</html>
