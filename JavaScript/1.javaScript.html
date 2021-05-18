@@ -77,7 +77,7 @@
             
             // var x= 10;
             // x += 20;    // x = x + 20; 와 같은 의미.
-            // document.write(x);
+            // document.write(x);   // 30
 
         // var table = "<table border='1'>";    // " " 안에는 ' ' 로 표현. 
             // table += "<tr>";
@@ -602,7 +602,7 @@
                 var t = "<table border ='1'>";
                 
                 for(i = 1; i <= 5; i++) {
-                    t += "<tr>"; 
+                    t += "<tr>";                                     
                     for (j = 1; j <= 5; j++) {
                         t += "<td>" + num + "</td>"
                         num++;
@@ -612,9 +612,17 @@
                 t += "</table>";
 
                 document.write(t);
+            
+            // ' += ' 계산 방식
+                // var a = 1;                              // += 는 그때 그때 계산되는 값인지?? 
+                // a += 2;                                  // 3
+                // a += 4;                                 // 7 
+                // document.write(a);                      // 따라서, 그때 그때 계산되고 빼지는 값이 아니라 '+=' 는 더한다는 의미.
 
 
 
+
+                
     </script>
 </head>
 
