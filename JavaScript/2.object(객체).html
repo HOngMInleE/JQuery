@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>object(객체) </title>
+    
+    <style>
+    </style>
+    <script>
+    
+        var today = new Date();     // 생성 ( 객체를 생성한다. )    / 함수는 대문자 (Date,Int)
+                                    //  document.write()   // today (객체 변수) = document  (생성 안하고 바로 쓸 수 있게 만들어짐)
+                                    // 객쳐 변수 특징 = ' . '이 붙어야함 ex) today. document.
+        
+    // 현재 시간 
+
+        var nowMonth = today.getMonth();    // 달       // 메모리에 저장    / 0부터 시작함 / 0~11
+        var nowDate = today.getDate();      // 일
+        var nowDay = today.getDay();        // 요일     // 0부터 시작(0~6) sunday = o   / 숫자로 반환되어짐 
+
+        document.write("월 :" + nowMonth + "<br>");
+        document.write("일 :" + nowDate + "<br>");
+        document.write("요일 :" + nowDay + "<br>");
+
+    // 날짜(시간) 지정
+
+            var buyDay = new Date(2021,2,3);
+
+            var nowMonth = buyDay.getMonth();    
+            var nowDate = buyDay.getDate();    
+            var nowDay = buyDay.getDay();       
+
+            document.write("월 :" + nowMonth + "<br>");
+            document.write("일 :" + nowDate + "<br>");
+            document.write("요일 :" + nowDay + "<br>");
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
