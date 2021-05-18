@@ -544,18 +544,74 @@
 
             // 구구단 / for -> while 바꾸기
 
-                i = 2;                  // 2단부터 시작하기 때문에 행의 값 = 2 (row)
-                while(i <= 9) {
-                    j = 1;
-                    while(j <= 9) {
-                        document.write(i + " x " + j + " = " + i * j);
-                        document.write("<br>");
-                        j++;
-                    }
-                    document.write("<br>");
-                    i++;
-                }
+                // i = 2;                  // 2단부터 시작하기 때문에 행의 값 = 2 (row)
+                // while(i <= 9) {
+                //     j = 1;
+                //     while(j <= 9) {
+                //         document.write(i + " x " + j + " = " + i * j);
+                //         document.write("<br>");
+                //         j++;
+                //     }
+                //     document.write("<br>");
+                //     i++;
+                // }
 
+            // ' 예제 '
+                
+                // var table = "<table border='1'>";    // " " 안에는 ' ' 로 표현. 
+                // table += "<tr>";
+                // table += "<td>1</td><td>2</td><td>3</td>";
+                // table += "</tr>";
+                // table += "</table>"; 
+
+                // document.write(table);
+
+            // 처음에 한 것
+
+                // var table = "<table border = '1'>";
+                //     tr = "<tr>";
+                //     td = "<td>";
+                //     /tr = "</tr>";
+                //     /td = "</td>";
+                //     /table = "</table>";
+                // var i = 1;
+                // var j = 1;
+                // for(i = 1; i <= 25; i++){
+                // }
+                // document.write(table + tr + td + /td + /td + /tr + /table);
+
+            // 두번째로 한 것 
+
+                // document.write("<table border = '1px solid black'>");
+                // var n = 1;
+                // var row = 5;
+                // var col = 5;
+                // for(i = 1; i <= row; i++) {
+                //     document.write("<tr>");
+                //     for(j = 1; j <= col; j++) {
+                //         document.write("<td>" + n + "</td>");                
+                //         n++;                                            // ++ = 무엇인지???? // 
+                //     }
+                //     document.write("</tr>");
+                // }
+                // document.write("</table>");
+
+            // 선생님이랑 한 것 
+
+                var num = 1;
+                var t = "<table border ='1'>";
+                
+                for(i = 1; i <= 5; i++) {
+                    t += "<tr>"; 
+                    for (j = 1; j <= 5; j++) {
+                        t += "<td>" + num + "</td>"
+                        num++;
+                    }
+                    t += "</tr>";
+                }
+                t += "</table>";
+
+                document.write(t);
 
 
 
