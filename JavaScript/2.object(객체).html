@@ -8,6 +8,19 @@
     <style>
     </style>
     <script>
+            // ' 내장 객체 '
+
+                // 속성 , 기능 
+
+                    // 속성     / 형태, 도구의 느낌.
+
+                        // 변수  
+
+                    // 기능     / 행위, 동작의 느낌.     ex) alert, prompt, 'document' 라는 객체안에 '.write()'라는 기능    / ' . ' 앞에 있는 것은 객체.
+
+                        // 함수 
+
+
     // 객체 생성
 
         // var today = new Date();     // 생성 ( 객체를 생성한다. )    / 객체는 대문자 (Date,Int)   + 뒤에 괄호() 붙임.
@@ -70,16 +83,56 @@
     
     // 난수 구하는 공식
         // (Math.random() * (난수의 개수[최대값 - 최소값 + 1])) + 최솟값
-                                            //  ( 값의 구간 ) + ( 값의 시작값)
-        // var r = Math.floor(Math.random() * (10 - 1 + 1)) + 1 
+                                             //  ( 값의 구간 ) + ( 값의 시작값)
+          // var r = Math.floor(Math.random() * (10 - 1 + 1)) + 1 
         
-            i = 0;
-            while(i < 10){
-                var r = Math.floor(Math.random() * (2411 - 1 + 1)) + 1 
-                document.write(r);
-                document.write("<br>");
-                i++;
-            }
+            // i = 0;
+            // while(i < 10){
+            //     var r = Math.floor(Math.random() * (10 - 1 + 1)) + 1 
+            //     document.write(r);
+            //     document.write("<br>");
+            //     i++;
+            // }
+
+    // ' 예제 ' 가위바위보 게임 만들기
+    
+        document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+        var me = prompt("가위, 바위, 보 중 선택하세요","가위, 바위, 보");
+        var meNum;
+        switch(me){                     // 내가 낸 것을 숫자로 변환 시키는 작업
+            case "가위": meNum = 1;
+            break;
+            case "바위": meNum = 2;
+            break;
+            case "보": meNum = 3;
+            break;
+            default: alert("잘못 입력");
+            location.reload();
+        }
+
+        var c = Math.floor(Math.random() * 3) + 1;
+
+        document.write("<img src='images/game1/" + c + ".jpg'>");     // img 가 안들어가짐. 상위디렉토리로 지정하니 잘됨. 그 중에서 골라서 랜덤하게 나오는 듯.
+        if(meNum == c){
+            document.write("<img src='images/win.jpg'>");
+        }else{
+            document.write("<img src='images/lose.jpg'>");
+        }
+
+        document.write("<h1>It's me</h1>");
+        if(meNum == 1){
+            document.write("<img src='images/game1/1.jpg'>");
+        }else if(meNum == 2) {
+            document.write("<img src='images/game1/2.jpg'>");
+        }else if (meNum == 3) {
+            document.write("<img src='images/game1/3.jpg'>");
+        }
+
+
+
+
+
+
 
 
 
