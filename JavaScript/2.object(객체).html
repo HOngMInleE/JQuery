@@ -8,32 +8,47 @@
     <style>
     </style>
     <script>
-    
-        var today = new Date();     // 생성 ( 객체를 생성한다. )    / 함수는 대문자 (Date,Int)
+    // var today = new Date();     // 생성 ( 객체를 생성한다. )    / 객체는 대문자 (Date,Int)   + 뒤에 괄호() 붙임.
                                     //  document.write()   // today (객체 변수) = document  (생성 안하고 바로 쓸 수 있게 만들어짐)
                                     // 객쳐 변수 특징 = ' . '이 붙어야함 ex) today. document.
         
     // 현재 시간 
 
-        var nowMonth = today.getMonth();    // 달       // 메모리에 저장    / 0부터 시작함 / 0~11
-        var nowDate = today.getDate();      // 일
-        var nowDay = today.getDay();        // 요일     // 0부터 시작(0~6) sunday = o   / 숫자로 반환되어짐 
+        // var nowMonth = today.getMonth();    // 달       // 메모리에 저장    / 0부터 시작함 / 0~11
+        // var nowDate = today.getDate();      // 일
+        // var nowDay = today.getDay();        // 요일     // 0부터 시작(0~6) sunday = o   / 숫자로 반환되어짐 
 
-        document.write("월 :" + nowMonth + "<br>");
-        document.write("일 :" + nowDate + "<br>");
-        document.write("요일 :" + nowDay + "<br>");
+        // document.write("월 :" + nowMonth + "<br>");
+        // document.write("일 :" + nowDate + "<br>");
+        // document.write("요일 :" + nowDay + "<br>");
 
     // 날짜(시간) 지정
 
-            var buyDay = new Date(2021,2,3);
+        // var buyDay = new Date(2021,2,3);
 
-            var nowMonth = buyDay.getMonth();    
-            var nowDate = buyDay.getDate();    
-            var nowDay = buyDay.getDay();       
+        // var nowMonth = buyDay.getMonth();    
+        // var nowDate = buyDay.getDate();    
+        // var nowDay = buyDay.getDay();       
 
-            document.write("월 :" + nowMonth + "<br>");
-            document.write("일 :" + nowDate + "<br>");
-            document.write("요일 :" + nowDay + "<br>");
+        // document.write("월 :" + nowMonth + "<br>");
+        // document.write("일 :" + nowDate + "<br>");
+        // document.write("요일 :" + nowDay + "<br>");
+
+    // 연말 까지의 남은 기간    // D-Day까지의 남은 기간 계산 방법
+        
+        // var today = new Date();
+        // var nowYear = today.getFullYear();      // 연도만 나타냄
+
+        // var theDate = new Date(nowYear, 11, 31);
+        // var diff = theDate.getTime() - today.getTime();     // 1000분의 1초 : 1ms / 
+
+        // var result = Math.ceil(diff / (60 * 1000 * 60 * 24));          // 1ms 값이 일자로 환산됨    // Math.ceil = 소수점 밑의 값이 없어짐(강제 올림)
+        // document.write("연말은" + result + "일 남았습니다.");
+
+    // Math 객체    
+    
+        
+
 
 
 
