@@ -54,6 +54,9 @@
             var i = 0; 
             function changeColor() {
                 i++;
+                if(i >= color.length) {     // i 가 컬러의 개수(배열수)보다 많아지면 
+                    i = 0;                  // i = 0 으로 돌아와 초기화. (눌러도 끝없이 무한히 반복)
+                }
                 var body = document.getElementById("back");
                 body.style.backgroundColor = color[i];      // 0 ~ 3까지 값들을 불러주기 위해 i값을 넣음.
             }
