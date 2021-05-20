@@ -65,36 +65,39 @@
    <script type="text/javascript">
 //<![CDATA[
 
+   // name 속성 이용 / form 태그에서만 가능.
+
+      document.f1.onsubmit = function(e) {
+         var pw1 = document.f1.user_pw1;     // form 태그에서만 가능한 name 속성이용.
+         var pw2 = document.f1.user_pw2;
+
+         pw2.value = pw1.value;  // pw2에 pw1 값 적용
+         pw2.disabled = true;     // 편집이 불가능한 상태가 됨 / 비활성화
+         return false;
+      }
+
+      document.f2.onsubmit = function() {    // 약관동의 체크 안하면 경고창이 뜸.
+         var act = document.f2.accept;
+         if(act.checked == false){
+            alert("약관 동의를 해야 합니다.")
+            act.focus();      // focus 를 따로 누르지 않아도 자동으로 마우스에 따라 움직이게함.
+            return false;
+         }
+      }
+
+      document.f2.allChk.onclick = function() {       // 전체선택 버튼 누르면 다 선택 , 해제 됨.
+         if (this.checked) {
+            document.f2.subject1.checked = true;
+            document.f2.subject2.checked = true;
+            document.f2.subject3.checked = true;
+         } else {
+            document.f2.subject1.checked = false;
+            document.f2.subject2.checked = false;
+            document.f2.subject3.checked = false;
+         }
+      }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
 //]]>
    </script>
 </body>
