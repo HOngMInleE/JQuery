@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM(Document Object Model) </title>
+
+    <style>
+
+    </style>
+    <script>
+        window.onload = function() {
+            var h = document.getElementById("sel");   // 객체. / 태그인 h1을 객체처럼사용. // Id를 기준을 요소를 가져오겠다.  
+                                        // Id의 속성값이 " "인 것을 가져와서 쓰겠다.
+
+        // 대상객체.style.속성 = " 값 + 단위";     
+            h.style.color = "red";      
+
+        // 1.' - ' 없애고 2. 첫문자 대문자로 써야함.    
+        //  h.style.font-size = "30px";
+            h.style.fontSize = "30px";
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1 id="sel">선택자</h1>
+    <P>i am a girl</P>
+    <a href="javascript:close()">창닫기</a>
+</body>
+
+</html>

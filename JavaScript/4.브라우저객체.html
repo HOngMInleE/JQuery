@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>0520. 4. 브라우저 객체 </title>
+    
+    <style>
+
+    </style>
+    <script>
+        // window.document.         // window 가 최상위라 생략.  / 
+
+        // window.open("내용정보","창이름","옵션");   // 새창열기
+        // window.open("https://www.naver.com", "", "width=300,height=300,top=300,left=500,location=no");
+
+        // alert("hello");     // 경고창
+        // confirm("world");   // 확인, 취소 (버튼 두개) / 확인 = true, 취소 = false 값이 반환됨 / 한 번 더 확인할때 사용 
+
+    // setInterval("함수",시간-1/1000)     / 1000 = 1초
+
+        // 일정시간을 주기로 반복되며 실행되게 하는 함수
+
+            // var addNum = 0;
+            // var subNum = 1000;
+
+            // var auto1 = setInterval(function() {
+            //     addNum++;
+            //     console.log("addNum : " + addNum);
+            // }, 3000) ;
+
+            // var auto2 = setInterval(function() {
+            //     subNum--;
+            //     console.log("addNum : " + subNum);
+            // }, 3000);
+
+        // 전자시계
+
+            // var today = new Date();
+
+            // var time = setInterval(function() {
+            //     var today = new Date();     // 그때 그때의 현재 시간. / 없으면 입력했던 시간에 멈춰진 값이 나옴. 
+            //     var t = today.getHours();
+            //     var m = today.getMinutes();
+            //     var s = today.getSeconds();
+
+            //     document.write(t + " 시 " + m  + " 분 " + s + " 초 " + "<br>");
+            // }, 1000) ;
+
+    // setTimeout   
+
+        // 딱 한 번만 실행되고 멈춤
+
+            // var addNum = 0;
+            // var auto3 = setTimeout(function() {
+            //     addNum++;
+            //     console.log("addNum : " + addNum);
+            // }, 3000) ;
+
+    // location
+
+        // location.reload();
+            alert("hi");
+        location.href = "https://www.naver.com";        // 해당 페이지로 이동하게 함
+
+        document.write()
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <button onclick="clearInterval(auto1)">증가 정지</button>
+    <button onclick="clearInterval(auto2)">감소 정지</button>
+    <button onclick="clearTimeout(auto3)">setTimeout</button>
+
+    <h1>HTML5</h1>
+    <P>i am a girl</P>
+    <P>오늘도 즐거운 하루 되세요</P>
+    <P>오늘도 즐거운 하루 되세요</P>
+    <P>오늘도 즐거운 하루 되세요</P>
+    <a href="javascript:close()">창닫기</a>
+
+</body>
+
+</html>

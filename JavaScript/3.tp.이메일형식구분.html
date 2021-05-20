@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>이메일형식구분 </title>
+
+    <style>
+
+    </style>
+    <script>
+        var userEmail = prompt("당신의 이메일 주소","");
+        var arrUrl = [".co.kr",".com",".net",".or.kr",".go.kr"];
+
+        var check1 = false;
+        var check2 = false;
+
+        if(userEmail.indexOf("@") > 0) {    // 조건 1 / indexOf 를 통해 @가 안에 들어있는지 확인 / 못찾으면 -1 이 반환됨.
+            check1 = true;
+        }
+
+        for(i = 0; i < arrUrl.length; i++) {   // i = 배열이기때문에 값을 0부터 시작   / arrUrl 값을 돌아가며 적용.
+            if(userEmail.indexOf(arrUrl[i]) > 0) {      // 조건 2 / Url주소가 맞는지 확인. ( 배열 이용함)
+                check2 = true;
+            }    
+        }
+        
+        if (check1 && check2) {
+            document.write(userEmail)
+        } else {
+            alert("이메일 형식이 잘못됨");
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
