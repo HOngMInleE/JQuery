@@ -23,30 +23,41 @@
         
         // 함수명(값);
 
-            function add(){
-                document.write(2 + 3);
-            }
+    //         function add(){
+    //             document.write(2 + 3);
+    //         }
 
-            add();      // 매개변수가 없기때문에 괄호안에 값이 없음.
+    //         add();      // 매개변수가 없기때문에 괄호안에 값이 없음.
 
-    document.write("<br>");
+    // document.write("<br>");
             
-            function add2(x, y) {       // 매개변수에 var는 적지않음.   / 내가 필요한 데이터를 가지고 함수에 실행할수있게하는역할.
-                document.write(x + y);
+    //         function add2(x, y) {       // 매개변수에 var는 적지않음.   / 내가 필요한 데이터를 가지고 함수에 실행할수있게하는역할.
+    //             document.write(x + y);
+    //         }
+
+    //         add2(10, 20);   // x, y 자리에 들어갈 변수를 넣어줌 -> 함수를 통해 계산이 된 값이 호출됨.
+
+    // document.write("<br>");
+
+    //         function add3(x, y) {
+    //             var sum = x + y;
+    //             return sum;     // return 의 정확한 의미? // 해결 : // 
+    //         }
+
+    //         document.write(add3(1 , 2));        // sum 값이 됨. / return 에 의해.
+
+    // document.write("<br>");
+
+        // ' 예제 '
+
+            var color = ["white", "yellow", "aqua", "purple"];
+            var i = 0; 
+            function changeColor() {
+                i++;
+                var body = document.getElementById("back");
+                body.style.backgroundColor = color[i];      // 0 ~ 3까지 값들을 불러주기 위해 i값을 넣음.
             }
 
-            add2(10, 20);   // x, y 자리에 들어갈 변수를 넣어줌 -> 함수를 통해 계산이 된 값이 호출됨.
-
-    document.write("<br>");
-
-            function add3(x, y) {
-                var sum = x + y;
-                return sum;     // return 의 정확한 의미? // 해결 : // 
-            }
-
-            document.write(add3(1 , 2));        // sum 값이 됨. / return 에 의해.
-
-    document.write("<br>");
 
 
 
@@ -56,8 +67,8 @@
     </script>
 </head>
 
-<body>
-
+<body id="back">
+    <button onclick="changeColor();">배경바꾸기</button>
 
 </body>
 
