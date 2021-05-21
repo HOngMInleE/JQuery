@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+
+    </style>
+    <script>
+        function Student(name, kor, eng) {
+            this.userName = name;
+            this.userKor = kor;
+            this.userEng = eng;
+        }
+
+        Student.prototype.getInfo() {
+            var str = "";
+            str += "이름: " + userName + "<br>";
+            str += "국어: " + userKor + "<br>";
+            str += "영어: " + userEng + "<br>";
+        }
+
+        Student.prototype.getResult() {
+            userKor + userEng / 2
+        }
+
+
+        // document.write(getResult);
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
