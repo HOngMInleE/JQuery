@@ -7,7 +7,7 @@
     function Question(text, choice, answer) {
         this.text = text;
         this.choice = choice;
-        this.answer; 
+        this.answer = answer; 
     }
 
     var questions = [
@@ -18,6 +18,10 @@
         this.score = 0;
         this.questions = questions;     // this 로 question라는 변수를 가져와 값을 받음. 
         this.questionIndex = 0;     // 문제를 (번호)순서대로 가져오는 역할, 
+    }
+
+    Quiz.prototype.correctAnswer = function(answer) {
+        return answer == this.questions[this.questionIndex].answer;
     }
 
     var quiz = new Quiz(questions);
@@ -48,8 +52,46 @@
     var btn = document.querySelectorAll('.btn');
 
     function checkAnswer(i) {
-        
+        btn[i].addEventListener('click',function() {
+            var answer = btn[i].innerText;
+            if(quiz.correctAnswer(answer)) {
+                alert("정답입니다.");
+                quiz.score++;
+            } else {
+                alert("땡! 틀렸습니다.")
+            }
+
+            result();
+        });
     }
 
+    for(i =0; i < 4; i++) {
+        checkAnswer(i);
+    }
 
+    // 결과 화면
+
+    function result() {
+        var quiz_div = document.getElementById('quiz');
+        var per = parseInt((quiz.score*100) / quiz.questions.length);
+
+        var txt = '<h1>결과</h1>' + '<h2 id="score"> 당신의 점수: ' + quiz.score + '/' +
+            quiz.questions.length + '<br><br>' + per + '점</h2>';
+
+        quiz_div.innerHTML = txt;
+
+        if(per >= 80) {
+            txt += '<h2 style="color:red"> 훌륭합니다 </h2>';
+            quiz_div.innerHTML = txt;
+        } else if (80 > per >= 60) {
+            txt += '<h2 style="color:blue"> 좀 치시네요! </h2>';
+            quiz_div.innerHTML = txt;
+        } else if (60 > per >= 40) {
+            txt += '<h2 style="color:green"> 다음 기회에.. </h2>';
+            quiz_div.innerHTML = txt;
+        } else if (40 > per >= 0) {
+            txt += '<h2 style="color:red"> 분발하세요! </h2>';
+            quiz_div.innerHTML = txt;
+        } 
+    }
 
