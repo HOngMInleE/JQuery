@@ -15,16 +15,21 @@
             this.userEng = eng;
         }
 
-        Student.prototype.getInfo() {
-            var str = "";
-            str += "이름: " + userName + "<br>";
-            str += "국어: " + userKor + "<br>";
-            str += "영어: " + userEng + "<br>";
+        Student.prototype.getTestInfo = function() {
+            document.write("이름: " + this.userName, "<br>");       // 변수앞에 this가 있다면 같이 붙여서
+            document.write("국어: " + this.userKor, "<br>");
+            document.write("영어: " + this.userEng, "<br>");
         }
 
-        Student.prototype.getResult() {
-            userKor + userEng / 2
+        Student.prototype.getTestAvr = function() {
+            return (this.userKor + this.userEng) / 2;
         }
+
+        var hong = new Student("이홍민", 90, 90);
+
+        hong.getTestInfo();
+        document.write("평균 점수: " + hong.getTestAvr(), "<br><br>");
+
 
 
         // document.write(getResult);
