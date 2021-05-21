@@ -19,20 +19,21 @@
       var myBtn = document.getElementById("btn");
 
       //파이어폭스, 크롬 등 브라우저에서 true를 반환하여 조건식을 만족함.
-
-
+      
+        if(window.addEventListener) {
+  
       //<button id="btn">인 요소를 클릭할 때 마다 함수 fnc1을 호출합니다.
-
+        myBtn.addEventListener("click", fnc1, false);
 
       //<button id="btn">인 요소를 클릭할 때 마다 함수 fnc2를 호출합니다.
+        myBtn.addEventListener("click", fnc2);
 
+      } else { //IE(8 이하)에서만 실행
 
-      //IE(8 이하)에서만 실행
-
-
-
-
-
+        myBtn.addEventListener("click", fnc1, false);
+        myBtn.addEventListener("click", fnc1);
+        
+      }//End : else
     } //End : onload
 //]]>
   </script>
