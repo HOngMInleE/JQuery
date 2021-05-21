@@ -11,34 +11,86 @@
         // 속성과 기능으로 이루어져 있어야 함.
                 // 첫글자에 대문자. 
 
-            // 속성 / 변수 / 로 표현
-
-            // 기능 / 함수 / 로 표현
+            // 속성 / 변수 / 로 표현    ex) 차 : 핸들, 좌석, 문짝, 라이트 등등..
+            
+            // 기능 / 함수 / 로 표현    ex) 차 : 앞으로가기, 뒤로가기, 클락션울리기, 에어컨가동 등등..
 
 
         // 속성 적용 
+            
+            // 객체 변수 : this 붙여야함.
+                
+                // function CheckWeight(name, height, weight) {
+                //     this.userName = name;      // 반드시 this 사용 / ' . ' +(변수 생성) 
+                //     this.userHeight = height;
+                //     this.userWeight = weight;
+
+                //     this.minWeight;
+                //     this.maxWeight;
+
+        // 객체안에서 함수를 정의하는 방법
+            // this.(변수이름) = function () {}
+
+                // this.getInfo = function () {
+                //     var str = ""    // 함수안에서 생성된 변수이기 때문에 var 작성해줌.
+                //     str += "이름: " + this.userName + ", ";
+                //     str += "키: " + this.userHeight + ", ";
+                //     str += "몸무게: " + this.userWeight + "<br>";
+                //     return str;
+                // }
+
+                // this.getResult = function () {
+                //     this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+                //     this.maxWeight = (this.userHeight - 100) * 0.9 - 5;
+                
+                //     if(this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight) {
+                //         return "평균 몸무게입니다."     // return에 직접 문자 값을 넣어도 됨.
+                //     }else if (this.userWeight < this.minWeight) {
+                //         return "평균 몸무게보다 미달입니다." 
+                //     }else {
+                //         return "평균 몸무게보다 초과입니다." 
+                //     }
+                // }
+            // }   
+
+            // document.wrtie(CheckWeight(이홍민,170,70));
+
+        // 생성
+
+            // var me = new CheckWeight("이홍민", 170, 70);
+            // me.getInfo();   // me 안에 getInfo 함수에 매개변수가 있었다면 적어줬어야함.
+            // me.getResult();     // " 이하 마찬가지. 
+            // document.write(me.getInfo());
+            // document.write(me.getResult());
+
+            // var kim = new CheckWeight("김유신", 180, 80);
+            // document.write(me.getInfo());
+            // document.write(me.getResult());
+
+
+    // ' 프로토타입 함수 '  
+
+        // 메모리에 1번만 할당, 객체들이 공유하는 방법.    // 공유의 개념.
+            // 객체.prototype.함수
 
             function CheckWeight(name, height, weight) {
-                this.userName = name;      // 반드시 this 사용 / ' . ' +(변수 생성) 
+                this.userName = name;      
                 this.userHeight = height;
                 this.userWeight = weight;
 
                 this.minWeight;
                 this.maxWeight;
 
-        // 객체안에서 함수를 정의하는 방법
-            // this.(변수이름) = function () {}
-
-                this.getInfo = function () {
+            CheckWeight.prototype.getInfo = function() {        // 함수앞에 프로토타입함수만 넣어주고 바뀐 것 없음.
                     var str = ""    // 함수안에서 생성된 변수이기 때문에 var 작성해줌.
-                        str += "이름: " + this.userName + ", ";
-                        str += "키: " + this.userHeight + ", ";
-                        str += "몸무게: " + this.userWeight + "<br>";
-                        return str;
+                    str += "이름: " + this.userName + ", ";
+                    str += "키: " + this.userHeight + ", ";
+                    str += "몸무게: " + this.userWeight + "<br>";
+                    return str;
                 }
+            }
 
-
-                this.getResult = function () {
+            CheckWeight.prototype.getResult = function () {
                     this.minWeight = (this.userHeight - 100) * 0.9 - 5;
                     this.maxWeight = (this.userHeight - 100) * 0.9 - 5;
                 
@@ -50,13 +102,16 @@
                         return "평균 몸무게보다 초과입니다." 
                     }
                 }
-            }   
 
-            // document.wrtie(CheckWeight(이홍민,170,70));
-
-
-
-
+            var me = new CheckWeight("이홍민", 170, 70);
+            me.getInfo();   
+            me.getResult();     
+            document.write(me.getInfo());
+            document.write(me.getResult());
+        document.write("<br>");
+            var kim = new CheckWeight("김유신", 180, 80);
+            document.write(kim.getInfo());
+            document.write(kim.getResult());
 
 
 
