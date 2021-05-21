@@ -24,7 +24,7 @@ body {
 } 
 
 .grid #question {
-    font-size: 24px;
+    font-size: 23px;
     background-color: rgb(145, 64, 118);
     border: 2px solid rgb(208, 104, 218);
     padding: 10px 2em;
