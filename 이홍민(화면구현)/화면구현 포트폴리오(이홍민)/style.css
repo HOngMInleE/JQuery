@@ -22,7 +22,7 @@
 }
 
 #quiz > #question {
-    font-size: 23px ;
+    font-size: 22px ;
     background-color: rgb(145, 64, 118);
     padding: 10px 2em;
     border: 2px solid rgb(208, 104, 218);
@@ -47,6 +47,7 @@
     padding: 15px;
 
     margin: 20px 10px 20px 10px;
+    width: 250px;
 }
 
 .btn:hover {

@@ -20,10 +20,10 @@ Quiz.prototype.correctAnswer = function (answer) {
 // -----------------------------------------------------------------------------------
 // 문제 데이터
 var questions = [
-	new Question('f', ['a', 'b', 'c', 'd'], 'e'),
-	new Question('a1', ['a', 'b', 'c', 'd'], 'a3'),
-	new Question('a1', ['a', 'b', 'c', 'd'], 'a3'),
-	new Question('a1', ['a', 'b', 'c', 'd'], 'a3'),
+	new Question('다음 중 최초의 상용 웹 브라우저는?', ['모자이크', '인터넷익스플로어', '구글 크롬', '넷스케이프 네비게이터'], '넷스케이프 네비게이터'),
+	new Question('웹 문서에서 스타일을 작성하는 언어는?', ['HTML', 'jQuery', 'CSS', 'XML'], 'CSS'),
+	new Question('명령어 기반의 인터페이스를 의미하는 용어는?', ['GUI', 'CLI', 'HUD', 'SI'], 'CLI'),
+	new Question('CSS 속성 중 글자의 굵기를 변경하는 속성은?', ['font-size', 'font-style', 'font-weight', 'font-variant'], 'font-weight'),
 ];
 
 // 퀴즈 객체 생성
@@ -36,10 +36,10 @@ function update_quiz() {
 	var idx = quiz.questionIndex + 1;
 	var choice = document.querySelectorAll('.btn');
 
-	question.innerHTML = '문제' + idx + ") " + quiz.questions[0].text;
+	question.innerHTML = '문제' + idx + ") " + quiz.questions[quiz.questionIndex].text;		// 문제 출력 바꾸기
 
-	for (i = 0; i < 4; i++) {
-		choice[i].innerHTML = quiz.questions[0].choice[i];
+	for (i = 0; i < choice.length; i++) {
+		choice[i].innerHTML = quiz.questions[quiz.questionIndex].choice[i];		// 선택 출력 바꾸기
 	}
 
 	progress();
@@ -66,13 +66,13 @@ function result() {
 	quiz_div.innerHTML = txt;
 
 	if (per >= 80) {
-		txt += '<h2 style="color:red"> 훌륭합니다 </h2>';
+		txt += '<h2 style="color:green"> 훌륭합니다 </h2>';
 		quiz_div.innerHTML = txt;
 	} else if (80 > per >= 60) {
-		txt += '<h2 style="color:blue"> 무난한 점수네요 </h2>';
+		txt += '<h2 style="color:red"> 무난한 점수네요 </h2>';
 		quiz_div.innerHTML = txt;
 	} else (60 > per >= 0); {
-		txt += '<h2 style="color:green"> 좀 더 분발하세요 </h2>';
+		txt += '<h2 style="color:red"> 좀 더 분발하세요 </h2>';
 		quiz_div.innerHTML = txt;
 	}
 }
