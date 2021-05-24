@@ -58,7 +58,7 @@
                 alert("정답입니다.");
                 quiz.score++;
             } else {
-                alert("땡! 틀렸습니다.")
+                alert("틀렸습니다!")
             }
 
             result();
