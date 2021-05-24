@@ -21,11 +21,37 @@ function set_balloon(num) { // num(매개변수) = 풍선 10개에 대한 정보
         speed = Math.random() * (2 - 0) + 0;
 
     cast[num] = {   // 객체 형식. / 변수 여러개를 묶어서 처리할 수 있는 형식.
-        y:-y            // 10개 모두 값이 고정, 다 다르게 하기 위해 예측불가능한 '난수'를 사용.
-        x:x,           // 만드는 방법 : 함수생성, 괄호로 만드는 방식, 
+        x : x,           // 만드는 방법 : 함수생성, 괄호로 만드는 방식, 
+        y : -y,      // 10개 모두 값이 고정, 다 다르게 하기 위해 예측불가능한 '난수'를 사용.
         size:size,        // 난수가 (x,y)값이 넓이에 벗어나지 않게 설정해야함.
         angle:angle,
         speed:speed    
     } 
-
 }
+
+function ball_init() {
+    for(i = 0; i < img.length; i++) {
+        set_balloon(i);
+        img[i].style.left = '-9999px';  // 화면에 보이지 않게됨.
+        img[i].style.top = '-9999px';
+    }
+}
+
+function animate_balloon() {
+    for(i = 0; i < img.length; i++) {
+        img[i].style.left = cast[i].x + 'px';  // cast 라는 변수의 x라는 객체를 가져옴. / 움직이게 될 x 좌표값.
+        img[i].style.top = cast[i].y + 'px';    // style, css 속성이기 떄문에 단위설정. ex) "px"
+        img[i].style.transform = 'rotate(' + cast[i].angle + 'deg)'; // 회전각도를 구성하는 css 속성.
+        
+        if(cast[i].y < parseInt(banner_height)) {
+            img[i].y += 1 + cast[i].speed;  // 떨어지는 속도 값 
+            img[i].angle += 1 + cast[i].speed;  // 돌아가는 앵글값    
+        } else {    
+            set_balloon(i); // 떨어진 풍선의 값 초기화.(원래 상태로)
+        }
+    }
+}
+ball_init();
+setInterval(function() {
+    animate_balloon();
+}, 1000/10);
