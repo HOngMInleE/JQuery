@@ -1,6 +1,5 @@
 // 필요한 요소들을 객체화.
 
-var banner_wrap = document.getElementById("banner_wrap");
 var banner = document.getElementById('banner');
 var img = document.getElementsByTagName('img'); // img 에 id, class 속성이 없어서 TagName 메소드로 가져옴.
 var toggle = document.getElementById('toggle'); // Elements 's'가 붙으면 배열형태로 가져와짐.
@@ -89,8 +88,9 @@ function animate_balloon() {
 // 오디오 실행 함수
 function bgm_init() {
     var bgm = new Audio();
-    bgm.src = '../images/bgm.mp3';
+    bgm.src = 'images/bgm.mp3';         // .. 붙이지 않아도 잘 됨. 이유는?      // html에 넣을 값이기 때문에 html 이 기준이 됨.
     bgm.loop = true;
+    bgm.volume = 0.1;
     document.body.appendChild(bgm);        // body태그에 child 를 추가할건데 append 할거다(마지막에 두겠다.)
 }
 
@@ -109,7 +109,35 @@ sound_btn.onclick = function(event) {
     var bgm = document.getElementsByTagName('audio');
     if (attr == 'active') {
         sound_btn.removeAttribute('class');
-        sound_btn.setAttribute('src','../images/sound_on.png');
+        sound_btn.setAttribute('src','images/sound_off.png');   // .. 붙이지 않아도 잘 됨. 이유는? // html에 넣을 값이기 때문에 html 이 기준이 됨.
         bgm[0].pause();
+    } else {
+        sound_btn.setAttribute("class","active");
+        sound_btn.setAttribute("src","images/sound_on.png");
+        bgm[0].play();
     }
+    event.stopPropagation();
+}
+
+toggle.onclick = function () {
+    var attr = banner.getAttribute('class');
+    if (attr == "active") {
+        banner.removeAttribute("class");
+        toggle.innerHTML = "배너 열기";
+        return false;                       // a 태그가 실행되지 않게 하겠다.
+    } else {
+        banner.setAttribute("class", "active");
+        toggle.innerHTML = "배너 닫기";
+        return false;
+    }
+}
+
+banner.onclick = function () {
+    window.open("http://www.naver.com","");
+
+    // var attr = banner.getAttribute("class");
+    // if ( attr == "active") {
+    //     banner.
+    //     banner.getAttribute("href", "https://www.naver.com")
+    // }
 }
