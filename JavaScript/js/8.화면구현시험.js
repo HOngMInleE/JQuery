@@ -6,11 +6,11 @@ function Question(text, choice, answer) {
 	this.answer = answer;
 }
 
-// 퀴즈 정보 객체
+// 퀴즈 정보 객체		// 객체 초기화, questions 는 따로 설정. <문제데이터
 function Quiz(questions) {
-	this.score = 0;
-	this.questions = questions;
-	this.questionIndex = 0;
+	this.score = 0;		// 점수
+	this.questions = questions;		// 질문[]
+	this.questionIndex = 0;		// 질문 순서
 }
 
 // 정답 확인 메소드
@@ -32,8 +32,8 @@ var quiz = new Quiz(questions);
 // -----------------------------------------------------------------------------------
 // 문제 출력 함수
 function update_quiz() {
-	var question = document.getElementById("question");
-	var idx = quiz.questionIndex + 1;
+	var question = document.getElementById("question");		// 함수 안에 정의된 변수는 다른 곳에서 쓰지 못한다.  (local, 지역의 개념)
+	var idx = quiz.questionIndex + 1;						
 	var choice = document.querySelectorAll('.btn');
 
 	question.innerHTML = '문제' + idx + ") " + quiz.questions[quiz.questionIndex].text;		// 문제 출력 바꾸기
@@ -68,10 +68,10 @@ function result() {
 	if (per >= 80) {
 		txt += '<h2 style="color:green"> 훌륭합니다 </h2>';
 		quiz_div.innerHTML = txt;
-	} else if (80 > per >= 60) {
+	} else if (80 > per && per >= 60) {		// && 써주지 않으면 실행이 안됨.
 		txt += '<h2 style="color:red"> 무난한 점수네요 </h2>';
 		quiz_div.innerHTML = txt;
-	} else (60 > per >= 0); {
+	} else if (per < 60) {
 		txt += '<h2 style="color:red"> 좀 더 분발하세요 </h2>';
 		quiz_div.innerHTML = txt;
 	}
@@ -87,7 +87,7 @@ function checkAnswer(i) {
 
 		if (quiz.correctAnswer(answer)) {
 			alert("정답입니다.");
-			quiz.score++;
+			quiz.score++;		// 정답 개수 + 1
 		} else {
 			alert("틀렸습니다!")
 		}
