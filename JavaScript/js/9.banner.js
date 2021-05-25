@@ -1,12 +1,13 @@
 // 필요한 요소들을 객체화.
 
+var banner_wrap = document.getElementById("banner_wrap");
 var banner = document.getElementById('banner');
 var img = document.getElementsByTagName('img'); // img 에 id, class 속성이 없어서 TagName 메소드로 가져옴.
 var toggle = document.getElementById('toggle'); // Elements 's'가 붙으면 배열형태로 가져와짐.
 var sound_btn = document.getElementById('sound_btn');
 
 var banner_height = getComputedStyle(banner).height;
-console.log(banner_height); // 190px 나옴   //banner.active 의 height값.
+// console.log(banner_height); // 190px 나옴   //banner.active 의 height값.
 
 // 각자 다른 값으로 떨어지는 풍선
 
@@ -29,6 +30,23 @@ function set_balloon(num) { // num(매개변수) = 풍선 10개에 대한 정보
     }
 }
 
+// function set_balloon(num){
+
+//     var x = Math.floor(Math.random() * (500 - 10) + 10),
+//       y = Math.floor(Math.random() * (400 - 120) + 120),
+//       size = Math.floor(Math.random() * (200 - 100) + 100),
+//       angle = Math.floor(Math.random() * (360 - 0) + 0),
+//       speed = Math.random() * (2 - 0) + 0;
+
+//     cast[num] = {
+//         x:x,
+//         y:-y,
+//         size:size,
+//         angle:angle,
+//         speed:speed
+//     }
+// }
+
 function ball_init() {
     for (i = 0; i < img.length; i++) {
         set_balloon(i);
@@ -44,14 +62,54 @@ function animate_balloon() {
         img[i].style.transform = 'rotate(' + cast[i].angle + 'deg)'; // 회전각도를 구성하는 css 속성.
 
         if (cast[i].y < parseInt(banner_height)) {
-            img[i].y += 1 + cast[i].speed;  // 떨어지는 속도 값 
-            img[i].angle += 1 + cast[i].speed;  // 돌아가는 앵글값    
+            cast[i].y += 1 + cast[i].speed;  // 떨어지는 속도 값 
+            cast[i].angle += cast[i].speed;  // 돌아가는 앵글값    
         } else {
             set_balloon(i); // 떨어진 풍선의 값 초기화.(원래 상태로)
         }
     }
 }
+
+// function animate_balloon(){
+//     for(i=0; i < img.length;i++){
+//         img[i].style.left = cast[i].x + 'px';
+//         img[i].style.top = cast[i].y + 'px';
+//         img[i].style.transform = 'rotate(' + cast[i].angle + 'deg)'
+
+//         if(cast[i].y < parseInt(banner_height)){
+//             cast[i].y += 1 + cast[i].speed;
+//             cast[i].angle += cast[i].speed;
+//         }else{
+//             set_balloon(i);
+//         }
+       
+//     }
+// }
+
+// 오디오 실행 함수
+function bgm_init() {
+    var bgm = new Audio();
+    bgm.src = '../images/bgm.mp3';
+    bgm.loop = true;
+    document.body.appendChild(bgm);        // body태그에 child 를 추가할건데 append 할거다(마지막에 두겠다.)
+}
+
+
+
+
+
 ball_init();
 setInterval(function () {
     animate_balloon();
-}, 1000 / 10);
+}, 1000 / 30);
+bgm_init();
+
+sound_btn.onclick = function(event) {
+    var attr = sound_btn.getAttribute('class');     // getAttribute = 특정 속성을 가져와달라.
+    var bgm = document.getElementsByTagName('audio');
+    if (attr == 'active') {
+        sound_btn.removeAttribute('class');
+        sound_btn.setAttribute('src','../images/sound_on.png');
+        bgm[0].pause();
+    }
+}
