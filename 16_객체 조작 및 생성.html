@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+        //  $('선택자').메소드();
+          var srcVal = $("#sec_1 img").attr("src");
+          console.log(srcVal);
+
+          $("#sec_1 img").attr({
+                "width":200,
+                "src":srcVal.replace("D_M.jpg","D_R.jpg"),
+                "alt":"Denji&Reje"
+          }).removeAttr("border");
+        });
+    </script>
+</head>
+
+<body>
+    <h1><strong>객체 조작 및 생성</strong></h1>
+    <section id="sec_1">
+        <h2>이미지 속성</h2>
+        <p><img src="images/D_M.jpg" alt="Denji&Makima" border="2" width="400px"></p>
+    </section>
+</body>
+
+</html>
