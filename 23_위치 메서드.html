@@ -6,19 +6,24 @@
     <title> </title>
     
     <style>
-
+       
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
         $(function(){
         //  $('선택자').메소드();
-            
+            $("#wrap p:eq(2)").after("<p>After</p>");
+            $("<p>insertAtrer</p>").insertAfter("#wrap p:eq(1)");
         });
     </script>
 </head>
 
 <body>
-    
+   <div id="wrap">
+       <p>내용1</p>
+       <p>내용2</p>
+       <p>내용3</p>
+   </div>
 </body>
 
 </html>

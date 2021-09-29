@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+      
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+        //  $('선택자').메소드();
+            //  text
+            // $(".wrap_1").children().first().text("내용1");
+            $(".wrap_1 p:first").text("내용1");
+
+            //  addClass
+            //  removeClass
+            $(".wrap_1 p.active").removeClass("active").addClass("on");
+
+            //  attr
+            $(".wrap_1 p:eq(2) a").attr("href","http://www.naver.com");
+
+            //  val
+            $(".wrap_1 p:eq(3) input").val("Korea");
+
+            //  after
+            // $(".wrap_2").children().first().after("<p>After(추가1)</p>");
+            $(".wrap_2 p:first").after("<p>After(추가1)</p>");
+
+            //  before
+            // $(".wrap_2").first().before("<p>Before(추가2)</p>");
+            $(".wrap_2 p:first").before("<p>Before(추가2)</p>");
+
+            //  unwrap
+            //  wrapInner
+            // $(".wrap_3 div").wrapInner("<strong/>");
+            $(".wrap_3 p").unwrap().wrapInner("<strong/>");
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1 id="tit_1">
+        <strong>객체 조작 및 생성 Test</strong>
+    </h1>
+    
+    <div class="wrap_1">
+        <p>텍스트1</p>
+        <p class="active">내용2</p>
+        <p><a href="#">네이버</a></p>
+        <p>
+            <input type="text" value="Hello">
+        </p>
+    </div>
+    <div class="wrap_2">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div>
+    <div class="wrap_3">
+        <div>
+            <p>내용7</p>
+            <p>내용8</p>
+        </div>
+    </div>
+</body>
+
+</html>

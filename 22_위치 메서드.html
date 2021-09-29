@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+        * { margin:0; padding: 0;}
+       body {line-height: 1;}
+       #wrap {
+           height: 5000px;
+           padding-top: 2000px;
+       }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+        //  $('선택자').메소드();
+            var topNum = $("h1").offset().top;
+            console.log(topNum);
+
+            var sct = $(window).scrollTop(topNum);
+            console.log(sct);
+        
+        });
+    </script>
+</head>
+
+<body>
+   <div id="wrap">
+       <h1>위치 메서드</h1>
+   </div>
+</body>
+
+</html>
