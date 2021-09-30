@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function( ){
+        //  $('선택자').메소드();
+            $("#btn1").data({"text":"javascript"})
+                .on({
+                    "mouseover":overFnc,
+                    "mouseout":outFnc
+            });
+
+            function overFnc() {
+                $(".txt").text($(this).data("text"));
+            }
+
+            function outFnc() {
+                $(".txt").text("");
+            }
+
+            //#btn2
+            $("#btn2").data({"text":"welcome"})
+                .on({
+                    "mouseover":overFnc,
+                    "mouseout":outFnc
+            });
+            
+        });
+    </script>
+</head>
+
+<body>
+   <p><button id="btn1">버튼1</button></p>
+   <p><button id="btn2">버튼2</button></p>
+   <p class="txt"></p>
+</body>
+
+</html>

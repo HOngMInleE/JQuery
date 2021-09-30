@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+        body {
+            height: 10000px;
+            width: 5000px;
+        }
+        #wrap {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function( ){
+        //  $('선택자').메소드();
+           $(window).on("scroll",function() {
+               var sc_top = $(this).scrollTop();
+               var sc_left = $(this).scrollLeft();
+
+               $(".top").text(sc_top);
+               $(".left").text(sc_left);
+
+                if(parseInt(sc_top) > 100) {
+                    $("body").css({"background-color":"#0f0"});
+                } else if (parseInt(sc_top) > 200) {
+                    $("body").css({"background-color":"#0ff"});
+                }else if(parseInt(sc_top) > 300) {
+                    $("body").css({"background-color":"#ff0"});
+                }
+           });
+        });
+    </script>
+</head>
+
+<body>
+   <div id="wrap">
+       <p>scrollTop : <span class="top">0</span>px</p>
+       <p>scrollLeft : <span class="left">0</span>px</p>
+    </div>
+</body>
+
+</html>

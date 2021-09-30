@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    //  $('선택자').메소드();
+        $(function( ){
+            // this 방식
+            $(".menuWrap_1 a").on("click",function(e){
+                e.preventDefault();
+                $(".menuWrap_1 a").css({"background-color":"#ff0"});
+
+                $(this).css({"background-color":"#0f0"});
+            });
+
+            // index 방식
+            $(".menuWrap_2 a").on("click",function(e) {
+                e.preventDefault();
+                $(".menuWrap_2 a").css({"background-color":"#ff0"});
+
+                var idx = $(".menuWrap_2 a").index(this);
+                $(".menuWrap_2 a").eq(idx).css({"background-color":"#0f0"});
+
+                $(".idxNum").text(idx);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+   <h2>$(this)</h2>
+   <ul class="menuWrap_1">
+       <li><a href="#">메뉴1</a></li>
+       <li><a href="#">메뉴2</a></li>
+       <li><a href="#">메뉴3</a></li>
+   </ul>
+   <h2>Index( )</h2>
+   <ul class="menuWrap_2">
+       <li><a href="#">메뉴4</a></li>
+       <li><a href="#">메뉴5</a></li>
+       <li><a href="#">메뉴6</a></li>
+   </ul>
+   <p class="idxNum"></p>
+</body>
+
+</html>
