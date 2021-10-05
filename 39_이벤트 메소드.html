@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    //  $('선택자').메소드();
+        $(function( ){
+            // delegate() : 라이브 이벤트 등록 방식, 대상의 '하위 요소'에 이벤트 적용
+            $(".btn_wrap").delegate(".btn_1.on","mouseover focus",function() {
+                alert("HELLO!");
+            });
+            $(".btn_1").addClass("on"); // 실행 됨
+
+            // one() : 이벤트 1회'만' 발생
+
+            $(document).one("mouseover focus",".btn_2.on",function(){
+                alert("WELCOME!");
+            });
+            $(".btn_2").addClass("on"); // mouseover focus 1회만 발생 // click시에도 발생..
+        });
+    </script>
+</head>
+
+<body>
+   <div id="wrap">
+        <p class="btn_wrap">
+           <button class="btn_1">버튼1</button>
+        </p>
+       <p><button class="btn_2">버튼2</button></p>
+   </div>
+</body>
+
+</html>

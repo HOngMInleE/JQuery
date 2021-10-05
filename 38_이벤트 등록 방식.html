@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    //  $('선택자').메소드();
+        $(function( ){
+             $(".btn_1.on").on("mouseover focus",function(){ //기본형 이벤트 등록 방식
+                alert("hello! 1");
+             });
+             $(".btn_1").addClass("on"); //실행 안됨
+
+             $(document).on("mouseover focus",".btn_2.on",function(){ //라이브 이벤트 등록 방식
+                alert("world!");
+             });
+             $(".btn_2").addClass("on"); //실행 됨
+        });
+    </script>
+</head>
+
+<body>
+   <div id="wrap">
+       <p><button class="btn_1">버튼1</button></p>
+       <p><button class="btn_2">버튼2</button></p>
+   </div>
+</body>
+
+</html>

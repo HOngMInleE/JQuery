@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    <style>
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    //  $('선택자').메소드();
+        $(function( ){
+            $(".btn2").hide();  //숨김
+
+            //slideUp
+            $(".btn1").on("click", function( ){ 
+                $(".box").slideUp(1000,"linear"/*효과*/, function(){ //slideUp이 끝난 후 실행되는 익명함수(function)
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+            //fadeIn
+            $(".btn2").on("click", function( ){ 
+                $(".box").fadeIn(1000,"swing", function(){ //slideUp이 끝난 후 실행되는 익명함수(function)
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+
+            //slideToggle
+            $(".btn3").on("click", function() {
+                $(".box").slideToggle(1000,"linear");
+            });
+
+            //fadeTo
+            $(".btn4").on("click", function() {
+                $(".box").fadeTo("fast",0.3);   // 0.3에서 멈춤
+            });
+
+            //fadeTo
+            $(".btn5").on("click", function() {
+                $(".box").fadeTo("fast",1);   // 0.3에서 멈춤
+            });
+        });
+    </script>
+<style type="text/css">
+    .content {
+        width: 400px;
+        background-color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+    <p>
+        <button class="btn1">sildeUp</button>
+        <button class="btn2">fadIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            <!-- <pre>
+                <h3>빌보드 소식을 한 큐에 알아보는 시간!</h3>
+                
+                이번 주 빌보드를 뜨겁게 달군 <strong>핫 이슈들,</strong>
+                그리고 전 세계인들이 주목하는
+                <strong>빌보드 메인 차트 순위</strong>까지.
+                
+                한 주간 주목할 만한 빌보드 소식들을
+                짧고 굵게 정리해 드립니다.
+                본문을 읽으며 추가해 둔 관련 음악들도
+                함께 감상해보세요!    
+            </pre> -->
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Maecenas feugiat consectetur nibh, ut luctus urna placerat non. 
+            Phasellus consectetur nunc nec mi feugiat egestas. 
+            Pellentesque et consectetur mauris, sed rutrum est. 
+            Etiam odio nunc, ornare quis urna sed, fermentum fermentum augue. 
+            Nam imperdiet vestibulum ipsum quis feugiat. Nunc non pellentesque diam, nec tempor nibh. 
+            Ut consequat sem sit amet ullamcorper sodales.
+        </div>
+    </div>
+</body>
+
+</html>
