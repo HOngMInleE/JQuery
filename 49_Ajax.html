@@ -15,6 +15,7 @@
             ex) {"name":"kim","age":"12"}
         */
 
+
     //  $('선택자').메소드();
         $(function(){
            $.ajax({
@@ -22,16 +23,30 @@
                 dataType:"xml",
                 success:function(data){
                     //익명함수를 통해 서버에서 보내준 data를 받는것. data: 매개변수, j,x,s 다 가능
-                    var $data = $(data).find("record"); //find(): 요소를 지정하면, 해당 요소를 배열 형태로 반환
+                    var $data = $(data).find("record"); //find(): 요소를 지정하면 해당 요소를 배열 형태로 반환
                     if($data.length > 0) {
                         var tb = $("<table />");
-                        $.each($data,function(i,p) {
-                            
-                        });
-                    }
-                }
-           });
-        });
+                        $.each($data,function(i,o) {    // for와 역할 같음
+                            var $id = $(o).find("id").text();
+                            var $first_name = $(o).find("first_name").text();
+                            var $last_name = $(o).find("last_name").text();
+                            var $email = $(o).find("email").text();
+                            var $gender = $(o).find("gender").text();
+
+                            var row = $("<tr />").append(
+                                $("<td />").text($id),
+                                $("<td />").text($first_name),
+                                $("<td />").text($last_name),
+                                $("<td />").text($email),
+                                $("<td />").text($gender)
+                            )
+                            tb.append(row);
+                        }); // each 
+                        $(".wrap").append(tb);
+                    }// if
+                }// success
+           });  // ajax
+        }); //function
 
     </script>
     <style type="text/css"> 
