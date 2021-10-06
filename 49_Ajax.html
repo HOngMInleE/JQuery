@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> Ajax </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        /*
+            var b = {key:value , key:value } //객체
+            b[key] ==> value
+    
+            var c = [{key:value}, {key:value}, {key:value}]
+            c[0][key] ==> 0번째 value
+    
+            ex) {"name":"kim","age":"12"}
+        */
+
+    //  $('선택자').메소드();
+        $(function(){
+           $.ajax({
+                url:"js/dataset.xml",
+                dataType:"xml",
+                success:function(data){
+                    //익명함수를 통해 서버에서 보내준 data를 받는것. data: 매개변수, j,x,s 다 가능
+                    var $data = $(data).find("record"); //find(): 요소를 지정하면, 해당 요소를 배열 형태로 반환
+                    if($data.length > 0) {
+                        var tb = $("<table />");
+                        $.each($data,function(i,p) {
+                            
+                        });
+                    }
+                }
+           });
+        });
+
+    </script>
+    <style type="text/css"> 
+    </style>
+
+    <body>
+        <div class="wrap">
+    </body>
+</html>

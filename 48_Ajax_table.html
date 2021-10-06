@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        /*
+            var b = {key:value , key:value } //객체
+            b[key] ==> value
+    
+            var c = [{key:value}, {key:value}, {key:value}]
+            c[0][key] ==> 0번째 value
+    
+            ex) {"name":"kim","age":"12"}
+        */
+
+    //  $('선택자').메소드();
+        $(function(){
+            $.ajax({
+                url:"js/MOCK_DATA.json",
+                dataType:"json",
+                success:function(data) {
+                    //익명함수를 통해 서버에서 보내준 data를 받는것. data: 매개변수, j,x,s 다 가능
+                    if(data.length > 0){
+                        var tb = $("<table/>");
+                        for(var i in data) {
+                            //향상된 for문. : 대신 in 사용.
+                            //    var $id = data[i][id]; 위와 같음
+                            var $id = data[i].id;
+                            var $first_name = data[i].first_name;
+                            var $last_name = data[i].last_name;
+                            var $email = data[i].email;
+                            var $gender = data[i].gender;
+
+                            var row = $("<tr />").append(
+                                $("<td />").text($id),
+                                $("<td />").text($first_name),
+                                $("<td />").text($last_name),
+                                $("<td />").text($email),
+                                $("<td />").text($gender)
+                            )
+                            tb.append(row); // table에 row 작성해줘야하니, for문 안에 작성
+                        }// for
+                        $(".wrap").append(tb);  // data가 있다면, wrap에 table 작성
+                    }// if
+                }// success
+            }); // ajax
+        });
+
+    </script>
+    <style type="text/css"> 
+    </style>
+
+    <body>
+        <div class="wrap">
+    </body>
+</html>

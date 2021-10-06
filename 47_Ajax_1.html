@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    //  $('선택자').메소드();
+        $(function(){
+            $("#newsWrap_1").load("46_Ajax_news.html #news_1"); //해당 파일 가져오기
+
+            $("#newsWrap_2").load("46_Ajax_news.html .news_2"); //class도 가능!
+        });
+
+    /*
+        var b = {key:value , key:value } //객체
+        b[key] ==> value
+
+        var c = [{key:value}, {key:value}, {key:value}]
+        c[0][key] ==> 0번째 value
+
+        ex) {"name":"kim","age":"12"}
+    */
+    </script>
+    <style type="text/css">
+        
+    </style>
+
+    <body>
+        <h1>LOAD 1</h1>
+        <div id="newsWrap_1"></div>
+        <h1>LOAD 2</h1>
+        <div id="newsWrap_2"></div>
+    </body>
+</html>
