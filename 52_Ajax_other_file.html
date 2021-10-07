@@ -16,7 +16,7 @@
             $(function(){
                 $.ajax({
                     url:"52_Ajax_jsp.jsp",
-                    dataType:"jsp",
+                    dataType:"jsonp",
                     success:function(data){
                         var $frm = $(".login_f");
                         $frm.on("submit", function(e){  //이벤트에 대한 핸들링 처리
