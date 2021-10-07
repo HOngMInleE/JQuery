@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> Ajax </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        //  $('선택자').메소드();
+            $(function(){
+                $.ajax({
+                    url:"https://www.chosun.com/arc/outboundfeeds/rss/category/economy/?outputType=xml",
+                    dataType:"xml",
+                    success:function(data){
+                        console.log(data);
+                    } //success
+                }); //ajax
+            }); //function
+
+        </script>
+        <style type="text/css"> 
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+    </body>
+</html>

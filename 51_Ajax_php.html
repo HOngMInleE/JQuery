@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> Ajax </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        //  $('선택자').메소드();
+            $(function(){
+                $.ajax({
+                    url:"news.php",
+                    dataType:"xml",
+                    success:function(data){
+                        var $items = $(data).find("item");
+
+                        if($items.length > 0) {
+                            $items = $items.slice(0,10);
+
+                            var $ulTag = $("<ul />");
+                            $.each($items, function(i,o) {
+                                var $title = $(o).find("title").text();
+                                var $link = $(o).find("link").text();
+                                var $pubDate = $(o).find("pubDate").text();
+
+                                var $aTag = $("<a />").attr({
+                                    "href":$link,   //속성부여
+                                    "target":"_blank"   //새창열기
+                                }).text($title);
+
+                                var $liTag = $("<li />").append($aTag);
+                                $ulTag.append($liTag);
+                            });
+                            $(".wrap").append($ulTag);
+                        }
+                    } //success
+                }); //ajax
+            }); //function
+
+        </script>
+        <style type="text/css"> 
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+    </body>
+</html>
