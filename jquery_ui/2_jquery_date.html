@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> Jquery UI </title>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <style type="text/css">
+        </style>
+
+        <script>
+        //  $('선택자').메소드();
+            $(function(){
+                $("#startDate").datepicker({
+                    minDate:+1,
+                    maxDate:"+1M"
+                });
+            }); //function
+        </script>
+    </head>
+    <body>
+        <p>
+            <label for="startDate">날짜 선택</label>
+            <input type="text" name="startDate" id="startDate">
+        </p>
+    </body>
+</html>

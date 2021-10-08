@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> Jquery UI </title>
+        <script src="js/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style type="text/css">
+            #notice_wrap img {
+                width: 300px;
+            }
+
+            * { margin: 0; padding: 0;}
+            body { font-size: 12px;}
+            input { vertical-align: middle;}
+            #notice_wrap {
+                width: 300px;
+                position: absolute;
+                left: 30px;
+                top: 30px;
+                box-shadow: 0 0 8px #000;
+            }
+            .closeWrap {
+                background-color: #000;
+                color: #fff;
+                text-align: right;
+                padding: 5px 10px;
+            }
+            .closeWrap button {
+                margin-left: 20px;
+                cursor: pointer;
+            }
+        </style>
+        <script>
+        //  $('선택자').메소드();
+            $(function(){
+                if($.cookie("popup") == "none") {
+                    $("#nocite_wrap").hide();
+                }
+
+                var $expChk = $("#expiresChk");
+                $(".closeBtn").on("click",closePop);
+
+                function closePop() {
+                    if($expChk.is(":checked")){
+                        $.cookie("popup","none",{expires:3,path:"/"});
+                    }
+                    $("#notice_wrap").fadeOut("fast");
+                }
+            }); //function
+        </script>
+    </head>
+    <body>
+        <div id="notice_wrap">
+            <img src="../images/D_M.jpg" alt="공지사항">
+            <p class="closeWrap">
+                <input type="checkbox" name="expiresChk" id="expiresChk">
+                <label for="expiresChk">3일 동안 이 창 열지 않기</label>
+                <button class="closeBtn">닫기</button>
+            </p>
+        </div>
+    </body>
+</html>

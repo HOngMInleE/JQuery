@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> Ajax member_login </title>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <style type="text/css">
+            div.layer_popup {
+                position: absolute;
+                left: 50px;
+                top: 50px;
+                cursor: move;
+                border: 1px solid #000;
+            }   
+            div img {
+                width: 400px;
+            }
+        </style>
+        <script>
+        //  $('선택자').메소드();
+            $(function(){
+                $(".layer_popup").draggable();
+            }); //function
+        </script>
+    </head>
+    <body>
+        <div class="layer_popup">
+            <img src="../images/D_M.jpg">
+        </div>
+    </body>
+</html>
